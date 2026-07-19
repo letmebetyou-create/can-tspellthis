@@ -1,13 +1,67 @@
 // =================================
-// Bet You - Screen System
+// Bet You - Game Engine
 // =================================
 
 
-const app = document.getElementById("app");
+// Temporary test challenge
+// This will later come from Google Apps Script API
+
+const testChallenge = {
+
+    title: "SPELL THIS",
+
+    words: [
+
+        {
+            beeGuide: "cat",
+            partOfSpeech: "Noun",
+            definition: "A small domesticated animal often kept as a pet.",
+            answer: "cat"
+        },
+
+
+        {
+            beeGuide: "rhythm",
+            partOfSpeech: "Noun",
+            definition: "A regular repeated pattern of sounds or movement.",
+            answer: "rhythm"
+        },
+
+
+        {
+            beeGuide: "zeh-buh",
+            partOfSpeech: "Noun",
+            definition: "A striped animal native to Africa.",
+            answer: "zebra"
+        },
+
+
+        {
+            beeGuide: "ahd-vark",
+            partOfSpeech: "Noun",
+            definition: "A nocturnal burrowing mammal from Africa.",
+            answer: "aardvark"
+        }
+
+    ]
+
+};
+
+
+
+// Game variables
+
+let currentWordIndex = 0;
+
+let playerAnswers = [];
+
+let currentChallenge = testChallenge;
+
+
 
 
 // =================================
-// Main Menu
+// HOME SCREEN
 // =================================
 
 
@@ -15,7 +69,6 @@ function showHome() {
 
 
     app.innerHTML = `
-
 
         <div class="border">
             ========================================
@@ -43,27 +96,27 @@ function showHome() {
         <nav class="menu">
 
 
-            <button class="menu-item" onclick="showChallenge()">
+            <button class="menu-item" onclick="startChallenge()">
                 DAILY CHALLENGE
             </button>
 
 
-            <button class="menu-item" onclick="showArchive()">
+            <button class="menu-item">
                 ANSWERS ARCHIVE
             </button>
 
 
-            <button class="menu-item" onclick="showLeaderboard()">
+            <button class="menu-item">
                 LEADERBOARD
             </button>
 
 
-            <button class="menu-item" onclick="showSuggestions()">
+            <button class="menu-item">
                 SUGGESTIONS
             </button>
 
 
-            <button class="menu-item" onclick="showAbout()">
+            <button class="menu-item">
                 ABOUT
             </button>
 
@@ -75,22 +128,43 @@ function showHome() {
             ========================================
         </div>
 
-
     `;
 
-
-    activateMenu();
 
 }
 
 
 
+
 // =================================
-// Daily Challenge Screen
+// START CHALLENGE
 // =================================
 
 
-function showChallenge() {
+function startChallenge() {
+
+
+    currentWordIndex = 0;
+
+    playerAnswers = [];
+
+    showWord();
+
+}
+
+
+
+
+// =================================
+// SHOW CURRENT WORD
+// =================================
+
+
+function showWord() {
+
+
+    const word =
+        currentChallenge.words[currentWordIndex];
 
 
     app.innerHTML = `
@@ -106,34 +180,53 @@ function showChallenge() {
         </h1>
 
 
+        <p>
+            WORD ${currentWordIndex + 1}
+            /
+            ${currentChallenge.words.length}
+        </p>
+
+
         <div class="divider">
             ----------------------------------------
         </div>
 
 
         <p>
-            TODAY'S CHALLENGE
+            ${word.beeGuide}
         </p>
 
 
         <p>
-            10 WORDS
+            ${word.partOfSpeech}
+        </p>
+
+
+        <p>
+            ${word.definition}
         </p>
 
 
         <br>
 
 
-        <button class="menu-item">
-            START
-        </button>
+        <input
+            id="answerInput"
+            type="text"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+        >
 
 
-        <br>
+        <br><br>
 
 
-        <button class="menu-item" onclick="showHome()">
-            BACK
+        <button
+            class="menu-item"
+            onclick="submitAnswer()"
+        >
+            NEXT
         </button>
 
 
@@ -144,58 +237,91 @@ function showChallenge() {
 
     `;
 
+
 }
+
 
 
 
 // =================================
-// Placeholder Screens
+// SAVE ANSWER
 // =================================
 
 
-function showArchive() {
+function submitAnswer() {
 
-    simpleScreen(
-        "ANSWERS ARCHIVE"
-    );
+
+    const input =
+        document.getElementById("answerInput");
+
+
+    const answer =
+        input.value.trim();
+
+
+    playerAnswers.push({
+
+        given:
+            answer,
+
+        correct:
+            answer.toLowerCase() ===
+            currentChallenge.words[currentWordIndex]
+                .answer
+
+    });
+
+
+
+    currentWordIndex++;
+
+
+
+    if (
+        currentWordIndex >=
+        currentChallenge.words.length
+    ) {
+
+
+        showResults();
+
+        return;
+
+    }
+
+
+
+    showWord();
+
 
 }
 
-
-function showLeaderboard() {
-
-    simpleScreen(
-        "LEADERBOARD"
-    );
-
-}
-
-
-function showSuggestions() {
-
-    simpleScreen(
-        "SUGGESTIONS"
-    );
-
-}
-
-
-function showAbout() {
-
-    simpleScreen(
-        "ABOUT"
-    );
-
-}
 
 
 
 // =================================
-// Generic Screen
+// RESULTS
 // =================================
 
 
-function simpleScreen(title) {
+function showResults() {
+
+
+    let score = 0;
+
+
+    playerAnswers.forEach(function(item) {
+
+
+        if (item.correct) {
+
+            score++;
+
+        }
+
+
+    });
+
 
 
     app.innerHTML = `
@@ -207,7 +333,7 @@ function simpleScreen(title) {
 
 
         <h1>
-            ${title}
+            DAILY COMPLETE
         </h1>
 
 
@@ -217,15 +343,41 @@ function simpleScreen(title) {
 
 
         <p>
-            Coming soon...
+            YAY YOU DID IT!
+        </p>
+
+
+        <p>
+            YOU GOT
+            ${score}
+            /
+            ${playerAnswers.length}
+            CORRECT
         </p>
 
 
         <br>
 
 
-        <button class="menu-item" onclick="showHome()">
-            BACK
+        <p>
+            Answers will be posted in
+            the Answers Archive tomorrow.
+        </p>
+
+
+        <br>
+
+
+        <button class="menu-item">
+            SHARE
+        </button>
+
+
+        <button
+            class="menu-item"
+            onclick="showHome()"
+        >
+            HOME
         </button>
 
 
@@ -241,54 +393,6 @@ function simpleScreen(title) {
 
 
 
-// =================================
-// Menu Selection
-// =================================
-
-
-function activateMenu() {
-
-
-    const menuItems =
-        document.querySelectorAll(".menu-item");
-
-
-    menuItems.forEach(function(item) {
-
-
-        item.addEventListener(
-            "click",
-            function() {
-
-
-                menuItems.forEach(function(button) {
-
-                    button.classList.remove(
-                        "selected"
-                    );
-
-                });
-
-
-                item.classList.add(
-                    "selected"
-                );
-
-
-            }
-        );
-
-
-    });
-
-
-}
-
-
-
-// =================================
-// Start App
-// =================================
-
+// Start
 
 showHome();
