@@ -1,7 +1,7 @@
 // =================================
 // Bet You - Game Engine
 // =================================
-
+const app = document.getElementById("app");
 
 // Temporary test challenge
 // This will later come from Google Apps Script API
