@@ -8,8 +8,6 @@
 
 const APP_VERSION = "v0.1.0";
 
-
-const app = document.getElementById("app");
 const app = document.getElementById("app");
 
 // Temporary test challenge
