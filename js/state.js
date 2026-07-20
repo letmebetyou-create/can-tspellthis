@@ -2,23 +2,8 @@
 // GAME STATE
 // =================================
 
-const GAME_STATE = {
+let currentChallenge = testChallenge;
 
+let currentWordIndex = 0;
 
-    user:
-        null,
-
-
-    challenge:
-        null,
-
-
-    currentWordIndex:
-        0,
-
-
-    answers:
-        []
-
-
-};
+let playerAnswers = [];
