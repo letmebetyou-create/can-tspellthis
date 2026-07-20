@@ -310,17 +310,89 @@ function submitAnswer() {
 
 
 
-
 // =================================
 // RESULTS
 // =================================
 
-
 function showResults() {
 
-    ...
-}
 
+    let score = 0;
+
+
+    playerAnswers.forEach(function(answer) {
+
+        if (answer.correct) {
+
+            score++;
+
+        }
+
+    });
+
+
+
+    app.innerHTML = `
+
+
+        <div class="border">
+            ========================================
+        </div>
+
+
+        <h1>
+            RESULTS
+        </h1>
+
+
+        <div class="divider">
+            ----------------------------------------
+        </div>
+
+
+        <p>
+            YAY YOU DID IT!
+        </p>
+
+
+        <p>
+            You got
+            ${score}
+            /
+            ${currentChallenge.words.length}
+            correct.
+        </p>
+
+
+        <p>
+            Answers will be posted in
+            the Answers Archive tomorrow.
+        </p>
+
+
+        <br>
+
+
+        <button
+            class="menu-item"
+            onclick="showHome()"
+        >
+            HOME
+        </button>
+
+
+        ${versionFooter()}
+
+
+        <div class="border">
+            ========================================
+        </div>
+
+
+    `;
+
+
+}
 // =================================
 // VERSION DISPLAY
 // =================================
