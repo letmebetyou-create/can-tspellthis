@@ -1,6 +1,8 @@
 // =================================
-// Bet You - Game Engine
+// BET YOU CAN'T SPELL THIS
+// Frontend Game Engine
 // =================================
+
 
 // =================================
 // VERSION
@@ -10,12 +12,16 @@ const APP_VERSION = "v0.1.0";
 
 const app = document.getElementById("app");
 
-// Temporary test challenge
-// This will later come from Google Apps Script API
+
+// =================================
+// TEST CHALLENGE DATA
+// =================================
 
 const testChallenge = {
 
     title: "SPELL THIS",
+
+    date: "20 JUL 2026",
 
     words: [
 
@@ -26,7 +32,6 @@ const testChallenge = {
             answer: "cat"
         },
 
-
         {
             beeGuide: "rhythm",
             partOfSpeech: "Noun",
@@ -34,14 +39,12 @@ const testChallenge = {
             answer: "rhythm"
         },
 
-
         {
             beeGuide: "zeh-buh",
             partOfSpeech: "Noun",
             definition: "A striped animal native to Africa.",
             answer: "zebra"
         },
-
 
         {
             beeGuide: "ahd-vark",
@@ -55,22 +58,20 @@ const testChallenge = {
 };
 
 
+// =================================
+// GAME STATE
+// =================================
 
-// Game variables
+let currentChallenge = testChallenge;
 
 let currentWordIndex = 0;
 
 let playerAnswers = [];
 
-let currentChallenge = testChallenge;
-
-
-
 
 // =================================
-// HOME SCREEN
+// HOME
 // =================================
-
 
 function showHome() {
 
@@ -78,80 +79,88 @@ function showHome() {
     app.innerHTML = `
 
         <div class="border">
-            ========================================
+        ========================================
         </div>
 
 
-        <section class="title">
+        <h1>
+        BET YOU
+        </h1>
 
-            <h1>
-                BET YOU
-            </h1>
-
-            <h2>
-                CAN'T SPELL THIS
-            </h2>
-
-        </section>
+        <h2>
+        CAN'T SPELL THIS
+        </h2>
 
 
         <div class="divider">
-            ----------------------------------------
+        ----------------------------------------
         </div>
 
 
-       <nav class="menu">
+        <p>
+        NOTIFICATIONS
+        </p>
+
+        <p>
+        < &nbsp; 1 / 1 &nbsp; >
+        </p>
+
+        <p>
+        Welcome to Bet You Can't Spell This.
+        </p>
 
 
-    <button class="menu-item" onclick="startChallenge()">
+        <div class="divider">
+        ----------------------------------------
+        </div>
+
+
+        <button class="menu-item" onclick="startChallenge()">
         DAILY CHALLENGE
-    </button>
+        </button>
 
 
-    <button class="menu-item" onclick="showArchive()">
+        <button class="menu-item" onclick="showArchive()">
         ANSWERS ARCHIVE
-    </button>
+        </button>
 
 
-    <button class="menu-item" onclick="showBlitz()">
+        <button class="menu-item" onclick="showBlitz()">
         BLITZ
-    </button>
+        </button>
 
 
-    <button class="menu-item" onclick="showLeaderboard()">
+        <button class="menu-item" onclick="showLeaderboard()">
         LEADERBOARD
-    </button>
+        </button>
 
 
-    <button class="menu-item" onclick="showSuggestions()">
+        <button class="menu-item" onclick="showSuggestions()">
         SUGGESTIONS
-    </button>
+        </button>
 
 
-    <button class="menu-item" onclick="showAbout()">
+        <button class="menu-item" onclick="showAbout()">
         ABOUT
-    </button>
-
-
-</nav>
+        </button>
 
 
         <div class="border">
-            ========================================
+        ========================================
         </div>
-${versionFooter()}
-    `;
 
+
+        ${versionFooter()}
+
+    `;
 
 }
 
 
 
-
 // =================================
-// START CHALLENGE
+// DAILY CHALLENGE INTRO
 // =================================
-
 
 function startChallenge() {
 
@@ -160,92 +169,134 @@ function startChallenge() {
 
     playerAnswers = [];
 
-    showWord();
+    showChallengeIntro();
 
 }
 
 
 
+function showChallengeIntro() {
+
+
+    app.innerHTML = `
+
+        <div class="border">
+        ========================================
+        </div>
+
+
+        <h1>
+        ${currentChallenge.title}
+        </h1>
+
+
+        <div class="divider">
+        ----------------------------------------
+        </div>
+
+
+        <p>
+        ${currentChallenge.date}
+        </p>
+
+
+        <p>
+        ${currentChallenge.words.length}
+        WORDS
+        </p>
+
+
+        <p>
+        ARE YOU READY?
+        </p>
+
+
+        <button class="menu-item" onclick="showWord()">
+        START
+        </button>
+
+
+        <button class="menu-item" onclick="showHome()">
+        BACK
+        </button>
+
+
+        ${versionFooter()}
+
+    `;
+
+}
+
+
 
 // =================================
-// SHOW CURRENT WORD
+// WORD SCREEN
 // =================================
-
 
 function showWord() {
 
 
-    const word =
-        currentChallenge.words[currentWordIndex];
+    const word = currentChallenge.words[currentWordIndex];
 
 
     app.innerHTML = `
 
 
         <div class="border">
-            ========================================
+        ========================================
         </div>
 
 
         <h1>
-            SPELL THIS
+        ${currentChallenge.title}
         </h1>
 
 
         <p>
-            WORD ${currentWordIndex + 1}
-            /
-            ${currentChallenge.words.length}
+        WORD ${currentWordIndex + 1}
+        /
+        ${currentChallenge.words.length}
         </p>
 
 
         <div class="divider">
-            ----------------------------------------
+        ----------------------------------------
         </div>
 
 
         <p>
-            ${word.beeGuide}
+        ${word.beeGuide}
         </p>
 
 
         <p>
-            ${word.partOfSpeech}
+        ${word.partOfSpeech}
         </p>
 
 
         <p>
-            ${word.definition}
+        ${word.definition}
         </p>
-
-
-        <br>
 
 
         <input
-            id="answerInput"
-            type="text"
-            autocomplete="off"
-            autocorrect="off"
-            spellcheck="false"
+        id="answerInput"
+        type="text"
+        autocomplete="off"
+        autocorrect="off"
+        spellcheck="false"
         >
 
 
         <br><br>
 
 
-        <button
-            class="menu-item"
-            onclick="submitAnswer()"
-        >
-            NEXT
+        <button class="menu-item" onclick="submitAnswer()">
+        NEXT
         </button>
 
 
-        <div class="border">
-            ========================================
-        </div>
-
+        ${versionFooter()}
 
     `;
 
@@ -254,57 +305,43 @@ function showWord() {
 
 
 
-
 // =================================
-// SAVE ANSWER
+// SUBMIT ANSWER
 // =================================
-
 
 function submitAnswer() {
 
 
     const input =
-        document.getElementById("answerInput");
+    document.getElementById("answerInput");
 
 
     const answer =
-        input.value.trim();
+    input.value.trim().toLowerCase();
 
 
-    playerAnswers.push({
+    const correct =
+    answer ===
+    currentChallenge.words[currentWordIndex].answer;
 
-        given:
-            answer,
 
-        correct:
-            answer.toLowerCase() ===
-            currentChallenge.words[currentWordIndex]
-                .answer
-
-    });
-
+    playerAnswers.push(correct);
 
 
     currentWordIndex++;
 
 
-
     if (
-        currentWordIndex >=
-        currentChallenge.words.length
+        currentWordIndex >= currentChallenge.words.length
     ) {
-
 
         showResults();
 
-        return;
+    } else {
+
+        showWord();
 
     }
-
-
-
-    showWord();
-
 
 }
 
@@ -320,245 +357,177 @@ function showResults() {
     let score = 0;
 
 
-    playerAnswers.forEach(function(answer) {
+    playerAnswers.forEach(function(answer){
 
-        if (answer.correct) {
-
+        if(answer){
             score++;
-
         }
 
     });
 
 
+    app.innerHTML = `
+
+
+        <div class="border">
+        ========================================
+        </div>
+
+
+        <h1>
+        ${currentChallenge.title}
+        </h1>
+
+
+        <p>
+        YAY YOU DID IT!
+        </p>
+
+
+        <p>
+        You got
+        ${score}
+        /
+        ${currentChallenge.words.length}
+        correct.
+        </p>
+
+
+        <p>
+        Answers will be posted in
+        Answers Archive tomorrow.
+        </p>
+
+
+        <button class="menu-item" onclick="showHome()">
+        HOME
+        </button>
+
+
+        ${versionFooter()}
+
+    `;
+
+
+}
+
+
+
+// =================================
+// OTHER PAGES
+// =================================
+
+function showArchive(){
+
+    simplePage(
+        "ANSWERS ARCHIVE",
+        "Past challenge answers will appear here."
+    );
+
+}
+
+
+function showBlitz(){
+
+    simplePage(
+        "BLITZ",
+        "Choose words and practise continuously."
+    );
+
+}
+
+
+function showLeaderboard(){
+
+    simplePage(
+        "LEADERBOARD",
+        "Weekly rankings will appear here."
+    );
+
+}
+
+
+function showSuggestions(){
+
+    simplePage(
+        "SUGGESTIONS",
+        "Suggest words and view community words here."
+    );
+
+}
+
+
+function showAbout(){
+
+    simplePage(
+        "ABOUT",
+        "The story behind Bet You Can't Spell This."
+    );
+
+}
+
+
+
+// =================================
+// SHARED PAGE
+// =================================
+
+function simplePage(title, text){
+
 
     app.innerHTML = `
 
 
         <div class="border">
-            ========================================
+        ========================================
         </div>
 
 
         <h1>
-            RESULTS
+        ${title}
         </h1>
 
 
-        <div class="divider">
-            ----------------------------------------
-        </div>
-
-
         <p>
-            YAY YOU DID IT!
+        ${text}
         </p>
 
 
-        <p>
-            You got
-            ${score}
-            /
-            ${currentChallenge.words.length}
-            correct.
-        </p>
-
-
-        <p>
-            Answers will be posted in
-            the Answers Archive tomorrow.
-        </p>
-
-
-        <br>
-
-
-        <button
-            class="menu-item"
-            onclick="showHome()"
-        >
-            HOME
+        <button class="menu-item" onclick="showHome()">
+        BACK
         </button>
 
 
         ${versionFooter()}
 
 
-        <div class="border">
-            ========================================
-        </div>
-
-
     `;
 
-
 }
+
+
+
 // =================================
-// VERSION DISPLAY
+// VERSION FOOTER
 // =================================
 
-function versionFooter() {
+function versionFooter(){
+
 
     return `
 
-        <div class="version">
-            ${APP_VERSION}
-        </div>
+    <p class="version">
+    ${APP_VERSION}
+    </p>
 
     `;
 
 }
 
-// =================================
-// SIMPLE PAGE TEMPLATE
-// =================================
-
-function showSimplePage(title, content) {
-
-
-    app.innerHTML = `
-
-
-        <div class="border">
-            ========================================
-        </div>
-
-
-        <h1>
-            ${title}
-        </h1>
-
-
-        <div class="divider">
-            ----------------------------------------
-        </div>
-
-
-        ${content}
-
-
-        <br>
-
-
-        <button
-            class="menu-item"
-            onclick="showHome()"
-        >
-            BACK
-        </button>
-
-        ${versionFooter()}
-        <div class="border">
-            ========================================
-        </div>
-
-
-    `;
-
-
-}
-
 
 
 // =================================
-// OTHER SCREENS
+// START APP
 // =================================
-
-function showArchive() {
-
-    showSimplePage(
-
-        "ANSWERS ARCHIVE",
-
-        `
-        <p>
-        Previous challenges will appear here.
-        </p>
-        `
-
-    );
-
-}
-
-
-
-function showBlitz() {
-
-    showSimplePage(
-
-        "PRACTICE BLITZ",
-
-        `
-        <p>
-        Choose how many words you want to practise.
-        </p>
-
-        <p>
-        5 &nbsp; 10 &nbsp; 25 &nbsp; 50
-        </p>
-        `
-
-    );
-
-}
-
-
-
-function showLeaderboard() {
-
-    showSimplePage(
-
-        "LEADERBOARD",
-
-        `
-        <p>
-        Weekly rankings will appear here.
-        </p>
-        `
-
-    );
-
-}
-
-
-
-function showSuggestions() {
-
-    showSimplePage(
-
-        "SUGGESTIONS",
-
-        `
-        <p>
-        Community word suggestions will appear here.
-        </p>
-        `
-
-    );
-
-}
-
-
-
-function showAbout() {
-
-    showSimplePage(
-
-        "ABOUT",
-
-        `
-        <p>
-        The story behind Bet You Can't Spell This.
-        </p>
-        `
-
-    );
-
-}
-
-
-
-// Start
 
 showHome();
-
