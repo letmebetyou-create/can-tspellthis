@@ -1,3 +1,4 @@
+alert("APP.JS LOADED");
 // =================================
 // BET YOU CAN'T SPELL THIS
 // Frontend Game Engine
