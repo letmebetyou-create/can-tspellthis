@@ -1,6 +1,15 @@
 // =================================
 // Bet You - Game Engine
 // =================================
+
+// =================================
+// VERSION
+// =================================
+
+const APP_VERSION = "v0.1.0";
+
+
+const app = document.getElementById("app");
 const app = document.getElementById("app");
 
 // Temporary test challenge
@@ -132,7 +141,7 @@ function showHome() {
         <div class="border">
             ========================================
         </div>
-
+${versionFooter()}
     `;
 
 
@@ -314,7 +323,21 @@ function showResults() {
     ...
 }
 
+// =================================
+// VERSION DISPLAY
+// =================================
 
+function versionFooter() {
+
+    return `
+
+        <div class="version">
+            ${APP_VERSION}
+        </div>
+
+    `;
+
+}
 
 // =================================
 // SIMPLE PAGE TEMPLATE
@@ -354,7 +377,7 @@ function showSimplePage(title, content) {
             BACK
         </button>
 
-
+        ${versionFooter()}
         <div class="border">
             ========================================
         </div>
