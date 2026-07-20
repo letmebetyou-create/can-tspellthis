@@ -93,35 +93,40 @@ function showHome() {
         </div>
 
 
-        <nav class="menu">
+       <nav class="menu">
 
 
-            <button class="menu-item" onclick="startChallenge()">
-                DAILY CHALLENGE
-            </button>
+    <button class="menu-item" onclick="startChallenge()">
+        DAILY CHALLENGE
+    </button>
 
 
-            <button class="menu-item">
-                ANSWERS ARCHIVE
-            </button>
+    <button class="menu-item" onclick="showArchive()">
+        ANSWERS ARCHIVE
+    </button>
 
 
-            <button class="menu-item">
-                LEADERBOARD
-            </button>
+    <button class="menu-item" onclick="showBlitz()">
+        BLITZ
+    </button>
 
 
-            <button class="menu-item">
-                SUGGESTIONS
-            </button>
+    <button class="menu-item" onclick="showLeaderboard()">
+        LEADERBOARD
+    </button>
 
 
-            <button class="menu-item">
-                ABOUT
-            </button>
+    <button class="menu-item" onclick="showSuggestions()">
+        SUGGESTIONS
+    </button>
 
 
-        </nav>
+    <button class="menu-item" onclick="showAbout()">
+        ABOUT
+    </button>
+
+
+</nav>
 
 
         <div class="border">
@@ -306,22 +311,16 @@ function submitAnswer() {
 
 function showResults() {
 
-
-    let score = 0;
-
-
-    playerAnswers.forEach(function(item) {
+    ...
+}
 
 
-        if (item.correct) {
 
-            score++;
+// =================================
+// SIMPLE PAGE TEMPLATE
+// =================================
 
-        }
-
-
-    });
-
+function showSimplePage(title, content) {
 
 
     app.innerHTML = `
@@ -333,7 +332,7 @@ function showResults() {
 
 
         <h1>
-            DAILY COMPLETE
+            ${title}
         </h1>
 
 
@@ -342,42 +341,17 @@ function showResults() {
         </div>
 
 
-        <p>
-            YAY YOU DID IT!
-        </p>
-
-
-        <p>
-            YOU GOT
-            ${score}
-            /
-            ${playerAnswers.length}
-            CORRECT
-        </p>
+        ${content}
 
 
         <br>
-
-
-        <p>
-            Answers will be posted in
-            the Answers Archive tomorrow.
-        </p>
-
-
-        <br>
-
-
-        <button class="menu-item">
-            SHARE
-        </button>
 
 
         <button
             class="menu-item"
             onclick="showHome()"
         >
-            HOME
+            BACK
         </button>
 
 
@@ -393,6 +367,105 @@ function showResults() {
 
 
 
+// =================================
+// OTHER SCREENS
+// =================================
+
+function showArchive() {
+
+    showSimplePage(
+
+        "ANSWERS ARCHIVE",
+
+        `
+        <p>
+        Previous challenges will appear here.
+        </p>
+        `
+
+    );
+
+}
+
+
+
+function showBlitz() {
+
+    showSimplePage(
+
+        "PRACTICE BLITZ",
+
+        `
+        <p>
+        Choose how many words you want to practise.
+        </p>
+
+        <p>
+        5 &nbsp; 10 &nbsp; 25 &nbsp; 50
+        </p>
+        `
+
+    );
+
+}
+
+
+
+function showLeaderboard() {
+
+    showSimplePage(
+
+        "LEADERBOARD",
+
+        `
+        <p>
+        Weekly rankings will appear here.
+        </p>
+        `
+
+    );
+
+}
+
+
+
+function showSuggestions() {
+
+    showSimplePage(
+
+        "SUGGESTIONS",
+
+        `
+        <p>
+        Community word suggestions will appear here.
+        </p>
+        `
+
+    );
+
+}
+
+
+
+function showAbout() {
+
+    showSimplePage(
+
+        "ABOUT",
+
+        `
+        <p>
+        The story behind Bet You Can't Spell This.
+        </p>
+        `
+
+    );
+
+}
+
+
+
 // Start
 
 showHome();
+
