@@ -24,6 +24,18 @@ const DEFAULT_SETTINGS = {
     Language: APP.defaultLanguage,
 
     // =================================
+    // Local Storage
+    // =================================
+
+    UsernameStorageKey: "bst_username",
+
+    RecoveryCodeStorageKey: "bst_recovery_code",
+
+    ThemeStorageKey: "bst_theme",
+
+    LanguageStorageKey: "bst_language",
+
+    // =================================
     // User
     // =================================
 
@@ -70,11 +82,7 @@ const DEFAULT_SETTINGS = {
 // Runtime Settings
 // =================================
 
-let SETTINGS = {
-
-    ...DEFAULT_SETTINGS
-
-};
+let SETTINGS = DEFAULT_SETTINGS;
 
 
 // =================================
@@ -85,11 +93,8 @@ async function loadSettings() {
 
     // TODO
     // Load settings from Apps Script.
+    // Until then, use the defaults.
 
-    SETTINGS = {
-
-        ...DEFAULT_SETTINGS
-
-    };
+    SETTINGS = DEFAULT_SETTINGS;
 
 }
