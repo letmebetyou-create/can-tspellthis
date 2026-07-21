@@ -1,48 +1,4 @@
 /* =================================
-BET YOU CAN'T SPELL THIS
-Main Styles
-================================= */
-
-
-/* =================================
-Base
-================================= */
-
-body {
-
-    margin: 0;
-
-    padding: 0;
-
-    background: #ffffff;
-
-    font-family: "Josefin Sans", sans-serif;
-
-    color: #111111;
-
-}
-
-
-
-#app {
-
-    min-height: 100vh;
-
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-}
-
-
-
-/* =================================
 Opening Screen
 ================================= */
 
@@ -63,7 +19,17 @@ Opening Screen
 
     letter-spacing: 0.15em;
 
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+
+}
+
+
+
+.opening-line-wrapper {
+
+    position: relative;
+
+    width: 100%;
 
 }
 
@@ -71,11 +37,9 @@ Opening Screen
 
 .opening-line {
 
-    width: 100%;
+    white-space: nowrap;
 
     overflow: hidden;
-
-    white-space: nowrap;
 
 }
 
@@ -83,13 +47,15 @@ Opening Screen
 
 .bee {
 
-    font-size: 2rem;
+    position: absolute;
 
-    margin-top: 30px;
+    top: -12px;
 
-    position: relative;
+    left: -40px;
 
-    left: -300px;
+    font-size: 1rem;
+
+    transform: scaleX(-1);
 
 }
 
@@ -97,9 +63,7 @@ Opening Screen
 
 .bee.fly {
 
-    animation:
-
-    beeFly 1.8s ease forwards;
+    animation: beeFly 2s ease forwards;
 
 }
 
@@ -110,14 +74,14 @@ Opening Screen
 
     from {
 
-        left: -300px;
+        left: -40px;
 
     }
 
 
     to {
 
-        left: 300px;
+        left: calc(100% + 40px);
 
     }
 
