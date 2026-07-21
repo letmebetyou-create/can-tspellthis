@@ -46,3 +46,92 @@ Opening Screen
     font-size: 1.4rem;
 
 }
+
+/* =================================
+Home Screen
+================================= */
+
+
+.home-screen {
+
+    width: 90%;
+
+    max-width: 600px;
+
+    text-align: center;
+
+}
+
+
+
+.home-title {
+
+    font-size: 1.4rem;
+
+    letter-spacing: 0.12em;
+
+    margin-bottom: 35px;
+
+}
+
+
+
+.home-divider {
+
+    font-size: 0.9rem;
+
+    letter-spacing: 0.1em;
+
+    margin: 25px 0;
+
+}
+
+
+
+.section-title {
+
+    font-size: 1rem;
+
+    letter-spacing: 0.15em;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.notification-navigation {
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.notification-message {
+
+    line-height: 1.5;
+
+}
+
+
+
+.home-options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+
+
+.menu-option {
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+}
