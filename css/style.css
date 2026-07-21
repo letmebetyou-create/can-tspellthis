@@ -1,139 +1,30 @@
-/* =================================
+<!-- =================================
 BET YOU CAN'T SPELL THIS
-Main Styles
-================================= */
-
-
-body {
-
-    margin: 0;
-
-    padding: 0;
-
-    background: #ffffff;
-
-    font-family: "Josefin Sans", sans-serif;
-
-    color: #111111;
-
-}
-
-
-
-#app {
-
-    min-height: 100vh;
-
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-}
-
-
-
-/* =================================
 Opening Screen
-================================= */
+================================= -->
 
 
-.opening-screen {
-
-    width: 90%;
-
-    max-width: 500px;
-
-    text-align: center;
-
-}
+<div class="opening-screen">
 
 
-
-.opening-title {
-
-    font-size: 1.4rem;
-
-    letter-spacing: 0.15em;
-
-    margin-bottom: 45px;
-
-}
+    <div class="opening-brand">
 
 
+        <div class="bee">
 
-.opening-zip {
+            🐝
 
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 12px;
-
-}
+        </div>
 
 
+        <div class="opening-title">
 
-.opening-line {
+            BET YOU CAN'T SPELL THIS
 
-    font-size: 0.9rem;
-
-    letter-spacing: 0.15em;
-
-}
+        </div>
 
 
-
-.bee-movement {
-
-    display: flex;
-
-    justify-content: center;
-
-}
+    </div>
 
 
-
-.bee {
-
-    display: inline-block;
-
-    font-size: 1rem;
-
-    transform: scaleX(-1);
-
-}
-
-
-
-.bee-movement.fly {
-
-    animation: beeFly 2s ease forwards;
-
-}
-
-
-
-@keyframes beeFly {
-
-
-    from {
-
-        transform: translateX(-100px);
-
-    }
-
-
-    to {
-
-        transform: translateX(100px);
-
-    }
-
-
-}
+</div>
