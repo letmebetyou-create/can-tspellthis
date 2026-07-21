@@ -4,11 +4,6 @@ Main Styles
 ================================= */
 
 
-/* =================================
-Base
-================================= */
-
-
 body {
 
     margin: 0;
@@ -39,11 +34,6 @@ body {
 
 }
 
-
-
-/* =================================
-Opening Screen
-================================= */
 
 
 .opening-screen {
@@ -80,7 +70,7 @@ Opening Screen
 
     align-items: center;
 
-    gap: 14px;
+    gap: 10px;
 
 }
 
@@ -90,9 +80,9 @@ Opening Screen
 
     width: 100%;
 
-    height: 1px;
+    font-size: 2rem;
 
-    background: #111111;
+    letter-spacing: 0.12em;
 
 }
 
@@ -112,6 +102,35 @@ Opening Screen
 
 .bee {
 
-    font-size: 1.2rem;
+    font-size: 1rem;
+
+}
+
+
+
+.bee-movement.fly {
+
+    animation: beeFly 2s ease forwards;
+
+}
+
+
+
+@keyframes beeFly {
+
+
+    from {
+
+        transform: translateX(-120px);
+
+    }
+
+
+    to {
+
+        transform: translateX(120px);
+
+    }
+
 
 }
