@@ -1,34 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Bet You Can't Spell This</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/themes/default.css">
 
 </head>
 
-
 <body>
 
+    <main id="app">
 
-    <main class="game-screen" id="app">
-
-        <!-- App content loads here -->
+        <!-- Screen loads here -->
 
     </main>
 
+    <!-- Core -->
 
-    <script src="js/version.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/core/version.js"></script>
+    <script src="js/core/config.js"></script>
+    <script src="js/core/state.js"></script>
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/api.js"></script>
+    <script src="js/core/router.js"></script>
+    <script src="js/core/app.js"></script>
 
+    <!-- Features -->
+
+    <script src="js/features/home.js"></script>
+    <script src="js/features/user.js"></script>
+    <script src="js/features/challenge.js"></script>
+    <script src="js/features/archive.js"></script>
+    <script src="js/features/blitz.js"></script>
+    <script src="js/features/leaderboard.js"></script>
+    <script src="js/features/suggestions.js"></script>
+    <script src="js/features/notifications.js"></script>
+    <script src="js/features/about.js"></script>
+
+    <!-- Components -->
+
+    <script src="js/components/footer.js"></script>
+    <script src="js/components/modal.js"></script>
+    <script src="js/components/dialog.js"></script>
+    <script src="js/components/loading.js"></script>
 
 </body>
-
 
 </html>
