@@ -7,11 +7,11 @@
 function initOpening() {
 
 
-    const bee =
-    document.getElementById("bee");
+    const beeMovement =
+    document.getElementById("beeMovement");
 
 
-    if (!bee) {
+    if (!beeMovement) {
 
         return;
 
@@ -22,7 +22,7 @@ function initOpening() {
     setTimeout(function(){
 
 
-        bee.classList.add("fly");
+        beeMovement.classList.add("fly");
 
 
     }, 500);
