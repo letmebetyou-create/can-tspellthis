@@ -50,12 +50,10 @@ Opening Screen
 /* =================================
 Home Screen
 ================================= */
-
 /* =================================
 BET YOU CAN'T SPELL THIS
 Game Style
 ================================= */
-
 
 
 .game-container {
@@ -106,7 +104,7 @@ Game Style
 
     font-size: 2rem;
 
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
 
 }
 
@@ -114,19 +112,9 @@ Game Style
 
 .title h2 {
 
-    margin: 5px 0 0;
+    margin: 8px 0 0;
 
-    font-size: 1.3rem;
-
-    letter-spacing: 0.15em;
-
-}
-
-
-
-.notifications h3 {
-
-    margin: 0 0 15px;
+    font-size: 1.2rem;
 
     letter-spacing: 0.15em;
 
@@ -134,9 +122,17 @@ Game Style
 
 
 
-.notification-navigation {
+.section-title {
 
-    margin-bottom: 15px;
+    letter-spacing: 0.15em;
+
+}
+
+
+
+.notification-page {
+
+    margin: 15px 0;
 
 }
 
@@ -148,7 +144,9 @@ Game Style
 
     flex-direction: column;
 
-    gap: 12px;
+    align-items: center;
+
+    gap: 14px;
 
 }
 
@@ -160,7 +158,7 @@ Game Style
 
     border: none;
 
-    padding: 8px;
+    padding: 8px 0;
 
     font-family: inherit;
 
