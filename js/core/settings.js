@@ -9,7 +9,7 @@ const DEFAULT_SETTINGS = {
     // Application
     // =================================
 
-    StartPage: "home",
+    StartPage: "opening",
 
     // =================================
     // Theme
