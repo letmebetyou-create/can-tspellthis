@@ -46,7 +46,7 @@ NOTIFICATIONS
 
 <p>
 
-< 1 / 1 >
+< &nbsp; 1 / 1 &nbsp; >
 
 </p>
 
@@ -68,9 +68,7 @@ Welcome to Bet You Can't Spell This.
 
 
 
-
-<button class="menu-item"
-onclick="loadPage('challengeIntro')">
+<button class="menu-item" data-page="challengeIntro">
 
 DAILY CHALLENGE
 
@@ -78,35 +76,15 @@ DAILY CHALLENGE
 
 
 
-<button class="menu-item"
-onclick="loadPage('leaderboard')">
+<button class="menu-item" data-page="archive">
 
-LEADERBOARD
-
-</button>
-
-
-
-<button class="menu-item"
-onclick="loadPage('suggestions')">
-
-SUGGESTIONS
+ANSWERS ARCHIVE
 
 </button>
 
 
 
-<button class="menu-item"
-onclick="loadPage('archive')">
-
-ARCHIVE
-
-</button>
-
-
-
-<button class="menu-item"
-onclick="loadPage('blitz')">
+<button class="menu-item" data-page="blitz">
 
 BLITZ
 
@@ -114,8 +92,23 @@ BLITZ
 
 
 
-<button class="menu-item"
-onclick="loadPage('about')">
+<button class="menu-item" data-page="leaderboard">
+
+LEADERBOARD
+
+</button>
+
+
+
+<button class="menu-item" data-page="suggestions">
+
+SUGGESTIONS
+
+</button>
+
+
+
+<button class="menu-item" data-page="about">
 
 ABOUT
 
@@ -129,6 +122,3 @@ ABOUT
 
 </div>
 
-<p>
-TEST VERSION 123
-</p>
