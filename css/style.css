@@ -78,7 +78,7 @@ Opening Screen
 
     align-items: center;
 
-    gap: 12px;
+    gap: 14px;
 
 }
 
@@ -86,9 +86,9 @@ Opening Screen
 
 .opening-line {
 
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 
-    letter-spacing: 0.12em;
+    letter-spacing: 0.2em;
 
 }
 
@@ -100,14 +100,12 @@ Opening Screen
 
     justify-content: center;
 
-    width: 100%;
-
 }
 
 
 
 .bee {
 
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 
 }
