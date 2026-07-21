@@ -51,12 +51,20 @@ Opening Screen
 Home Screen
 ================================= */
 
+/* =================================
+BET YOU CAN'T SPELL THIS
+Game Style
+================================= */
 
-.home-screen {
+
+
+.game-container {
 
     width: 90%;
 
     max-width: 600px;
+
+    margin: 0 auto;
 
     text-align: center;
 
@@ -64,23 +72,27 @@ Home Screen
 
 
 
-.home-title {
+.border {
 
-    font-size: 1.4rem;
+    width: 100%;
 
-    letter-spacing: 0.12em;
+    overflow: hidden;
 
-    margin-bottom: 35px;
+    white-space: nowrap;
+
+    margin: 20px 0;
 
 }
 
 
 
-.home-divider {
+.divider {
 
-    font-size: 0.9rem;
+    width: 100%;
 
-    letter-spacing: 0.1em;
+    overflow: hidden;
+
+    white-space: nowrap;
 
     margin: 25px 0;
 
@@ -88,13 +100,35 @@ Home Screen
 
 
 
-.section-title {
+.title h1 {
 
-    font-size: 1rem;
+    margin: 0;
+
+    font-size: 2rem;
+
+    letter-spacing: 0.2em;
+
+}
+
+
+
+.title h2 {
+
+    margin: 5px 0 0;
+
+    font-size: 1.3rem;
 
     letter-spacing: 0.15em;
 
-    margin-bottom: 15px;
+}
+
+
+
+.notifications h3 {
+
+    margin: 0 0 15px;
+
+    letter-spacing: 0.15em;
 
 }
 
@@ -108,30 +142,38 @@ Home Screen
 
 
 
-.notification-message {
-
-    line-height: 1.5;
-
-}
-
-
-
-.home-options {
+.menu {
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 18px;
+    gap: 12px;
 
 }
 
 
 
-.menu-option {
+.menu-item {
+
+    background: none;
+
+    border: none;
+
+    padding: 8px;
+
+    font-family: inherit;
+
+    font-size: 1rem;
 
     cursor: pointer;
 
-    font-size: 1rem;
+}
+
+
+
+.menu-item:hover {
+
+    text-decoration: underline;
 
 }
