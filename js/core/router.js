@@ -9,6 +9,8 @@
 // =================================
 
 const ROUTES = {
+
+
     opening: "pages/opening.html",
 
     home: "pages/home.html",
@@ -33,6 +35,7 @@ const ROUTES = {
 
     about: "pages/about.html"
 
+
 };
 
 
@@ -43,34 +46,105 @@ const ROUTES = {
 
 async function loadPage(pageName) {
 
-    const page = ROUTES[pageName];
+
+    const page =
+    ROUTES[pageName];
+
 
     if (!page) {
 
-        console.error("Unknown page:", pageName);
+
+        console.error(
+            "Unknown page:",
+            pageName
+        );
+
 
         return;
 
     }
 
+
+
     try {
 
-        const response = await fetch(page);
 
-        const html = await response.text();
+        const response =
+        await fetch(page);
+
+
+
+        const html =
+        await response.text();
+
+
 
         document.getElementById("app").innerHTML = html;
 
-        STATE.CurrentPage = pageName;
+
+
+        STATE.CurrentPage =
+        pageName;
+
+
+
+        runPageInit(pageName);
+
+
 
     }
 
-    catch (error) {
 
-        console.error("Unable to load page.");
+    catch(error) {
+
+
+        console.error(
+            "Unable to load page."
+        );
+
 
         console.error(error);
 
+
     }
+
+
+}
+
+
+
+// =================================
+// Page Initialisers
+// =================================
+
+function runPageInit(pageName) {
+
+
+    switch(pageName) {
+
+
+        case "opening":
+
+            initOpening();
+
+            break;
+
+
+
+        case "home":
+
+            initHome();
+
+            break;
+
+
+
+        default:
+
+            break;
+
+
+    }
+
 
 }
