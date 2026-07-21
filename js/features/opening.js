@@ -18,13 +18,14 @@ function initOpening() {
     }
 
 
+
     setTimeout(function(){
 
 
         bee.classList.add("fly");
 
 
-    }, 300);
+    }, 500);
 
 
 
@@ -34,7 +35,7 @@ function initOpening() {
         loadPage("home");
 
 
-    }, 2500);
+    }, 3000);
 
 
 }
