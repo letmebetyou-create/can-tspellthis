@@ -9,6 +9,7 @@
 // =================================
 
 const ROUTES = {
+    opening: "pages/opening.html",
 
     home: "pages/home.html",
 
