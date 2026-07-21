@@ -1,50 +1,113 @@
-<!-- =================================
+/* =================================
 BET YOU CAN'T SPELL THIS
+Main Styles
+================================= */
+
+
+/* =================================
+Base
+================================= */
+
+
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    background: #ffffff;
+
+    font-family: "Josefin Sans", sans-serif;
+
+    color: #111111;
+
+}
+
+
+
+#app {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+/* =================================
 Opening Screen
-================================= -->
+================================= */
 
 
-<div class="opening-screen">
+.opening-screen {
+
+    width: 90%;
+
+    max-width: 600px;
+
+    text-align: center;
+
+}
 
 
-    <div class="opening-title">
 
-        BET YOU CAN'T SPELL THIS
+.opening-title {
 
-    </div>
+    font-size: 2rem;
 
+    letter-spacing: 0.12em;
 
-    <div class="opening-zip">
+    margin-bottom: 40px;
 
-
-        <div class="opening-line">
-
-            ==============================
-
-        </div>
+}
 
 
-        <div class="bee-movement" id="beeMovement">
+
+.opening-zip {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
 
 
-            <div class="bee" id="bee">
 
-                🐝
+.opening-line {
 
-            </div>
+    font-size: 1.2rem;
 
+    letter-spacing: 0.12em;
 
-        </div>
-
-
-        <div class="opening-line">
-
-            ==============================
-
-        </div>
+}
 
 
-    </div>
+
+.bee-movement {
+
+    display: flex;
+
+    justify-content: center;
+
+    width: 100%;
+
+}
 
 
-</div>
+
+.bee {
+
+    font-size: 1.2rem;
+
+}
