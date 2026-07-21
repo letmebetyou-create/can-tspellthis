@@ -1,4 +1,4 @@
- /* =================================
+/* =================================
 BET YOU CAN'T SPELL THIS
 Main Styles
 ================================= */
@@ -23,9 +23,12 @@ body {
 }
 
 
+
 #app {
 
     min-height: 100vh;
+
+    width: 100%;
 
     display: flex;
 
@@ -48,9 +51,10 @@ Opening Screen
 
     width: 90%;
 
-    max-width: 600px;
+    max-width: 700px;
 
 }
+
 
 
 .opening-title {
@@ -67,9 +71,11 @@ Opening Screen
 
 .opening-line {
 
-    white-space: nowrap;
+    width: 100%;
 
     overflow: hidden;
+
+    white-space: nowrap;
 
 }
 
@@ -77,13 +83,13 @@ Opening Screen
 
 .bee {
 
-    margin-top: 30px;
-
     font-size: 2rem;
+
+    margin-top: 30px;
 
     position: relative;
 
-    left: -250px;
+    left: -300px;
 
 }
 
@@ -104,14 +110,14 @@ Opening Screen
 
     from {
 
-        left: -250px;
+        left: -300px;
 
     }
 
 
     to {
 
-        left: 250px;
+        left: 300px;
 
     }
 
