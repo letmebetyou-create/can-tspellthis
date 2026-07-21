@@ -4,6 +4,11 @@ Main Styles
 ================================= */
 
 
+/* =================================
+Base
+================================= */
+
+
 body {
 
     margin: 0;
@@ -67,19 +72,11 @@ Opening Screen
 
 .opening-zip {
 
-    width: 100%;
-
-    height: 90px;
-
-    position: relative;
-
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
-
-    justify-content: center;
 
     gap: 12px;
 
@@ -89,8 +86,6 @@ Opening Screen
 
 .opening-line {
 
-    width: 100%;
-
     font-size: 1.2rem;
 
     letter-spacing: 0.05em;
@@ -99,43 +94,53 @@ Opening Screen
 
 
 
+.bee-movement {
+
+    display: flex;
+
+    justify-content: center;
+
+    width: 100%;
+
+}
+
+
+
 .bee {
 
-    position: absolute;
+    font-size: 1.2rem;
 
-    top: 50%;
-
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    font-size: 1rem;
+    transform: scaleX(-1);
 
 }
 
 
 
-.bee.fly {
+.bee-movement.fly {
 
-    animation: beeZip 2s ease forwards;
+
+    animation:
+
+    beeFly 2s ease forwards;
+
 
 }
 
 
 
-@keyframes beeZip {
+@keyframes beeFly {
 
 
     from {
 
-        left: 20%;
+        transform: translateX(-150px);
 
     }
 
 
     to {
 
-        left: 80%;
+        transform: translateX(150px);
 
     }
 
