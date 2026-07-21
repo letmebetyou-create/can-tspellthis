@@ -7,35 +7,13 @@
 function initOpening() {
 
 
-    const beeMovement =
-    document.getElementById("beeMovement");
-
-
-    if (!beeMovement) {
-
-        return;
-
-    }
-
-
-
-    setTimeout(function(){
-
-
-        beeMovement.classList.add("fly");
-
-
-    }, 500);
-
-
-
     setTimeout(function(){
 
 
         loadPage("home");
 
 
-    }, 3000);
+    }, 2000);
 
 
 }
