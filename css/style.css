@@ -1,1 +1,119 @@
+ /* =================================
+BET YOU CAN'T SPELL THIS
+Main Styles
+================================= */
 
+
+/* =================================
+Base
+================================= */
+
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    background: #ffffff;
+
+    font-family: "Josefin Sans", sans-serif;
+
+    color: #111111;
+
+}
+
+
+#app {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+
+/* =================================
+Opening Screen
+================================= */
+
+
+.opening-screen {
+
+    width: 90%;
+
+    max-width: 600px;
+
+}
+
+
+.opening-title {
+
+    font-size: 2rem;
+
+    letter-spacing: 0.15em;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+.opening-line {
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+}
+
+
+
+.bee {
+
+    margin-top: 30px;
+
+    font-size: 2rem;
+
+    position: relative;
+
+    left: -250px;
+
+}
+
+
+
+.bee.fly {
+
+    animation:
+
+    beeFly 1.8s ease forwards;
+
+}
+
+
+
+@keyframes beeFly {
+
+
+    from {
+
+        left: -250px;
+
+    }
+
+
+    to {
+
+        left: 250px;
+
+    }
+
+
+}
