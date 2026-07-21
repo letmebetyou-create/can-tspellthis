@@ -4,57 +4,37 @@
 // =================================
 
 
-function showOpening() {
+function initOpening() {
 
 
-    app.innerHTML = `
-
-        <div class="opening-screen">
-
-
-            <div class="opening-title">
-
-                BET YOU CAN'T SPELL THIS
-
-            </div>
+    const bee =
+    document.getElementById("bee");
 
 
-            <div class="opening-line">
+    if (!bee) {
 
-                ========================================
+        return;
 
-            </div>
-
-
-            <div class="bee-container">
-
-                🐝
-
-            </div>
-
-
-        </div>
-
-    `;
+    }
 
 
     setTimeout(function(){
 
-        goToHome();
+
+        bee.classList.add("fly");
+
+
+    }, 300);
+
+
+
+    setTimeout(function(){
+
+
+        loadPage("home");
+
 
     }, 2500);
 
-
-}
-
-
-
-// =================================
-// Opening Navigation
-// =================================
-
-function goToHome(){
-
-    loadPage("home");
 
 }
