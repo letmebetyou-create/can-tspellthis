@@ -34,7 +34,7 @@ function showVersion() {
     if (version) {
 
         version.textContent =
-            APP_VERSION;
+            APP.version;
 
     }
 
