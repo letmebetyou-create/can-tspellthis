@@ -4,16 +4,56 @@
 // =================================
 
 
+// =================================
+// Initialise Opening Screen
+// =================================
+
 function initOpening() {
 
 
-    setTimeout(function(){
+    showVersion();
 
+
+    startApp();
+
+
+}
+
+
+// =================================
+// Show Version
+// =================================
+
+function showVersion() {
+
+
+    const version =
+        document.getElementById("version");
+
+
+    if (version) {
+
+        version.textContent =
+            APP_VERSION;
+
+    }
+
+
+}
+
+
+// =================================
+// Start App
+// =================================
+
+function startApp() {
+
+
+    setTimeout(function () {
 
         loadPage("home");
 
-
-    }, 2000);
+    }, 1000);
 
 
 }
