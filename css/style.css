@@ -1,185 +1,306 @@
-* ================================
-   Bet You - Main Style
-   ================================ */
+<!DOCTYPE html>
+<html lang="en-GB">
+/* ================================= */
+/* BET YOU CAN'T SPELL THIS */
+/* Global Styles */
+/* ================================= */
 
+<head>
 
+    <meta charset="UTF-8">
+/* ================================= */
+/* Reset */
+/* ================================= */
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 * {
+
+    <title>Bet You Can't Spell This</title>
     box-sizing: border-box;
+
+    <link rel="stylesheet"
+          href="css/style.css">
 }
 
+    <link rel="stylesheet"
+          href="css/themes/default.css">
 
+</head>
+html,
 body {
 
+    width: 100%;
+    min-height: 100%;
+
+<body>
     margin: 0;
+    padding: 0;
 
-    min-height: 100vh;
+    <main id="app">
+}
 
+        <!-- Screen loads here -->
+
+    </main>
+
+/* ================================= */
+/* Body */
+/* ================================= */
+
+    <!-- Core -->
+body {
+
+    <script src="js/core/version.js"></script>
+    <script src="js/core/settings.js"></script>
+    <script src="js/core/actions.js"></script>
+    <script src="js/core/state.js"></script>
+    <script src="js/core/storage.js"></script>
+    <script src="js/core/api.js"></script>
+    <script src="js/core/router.js"></script>
     display: flex;
 
     justify-content: center;
 
+    <!-- Components -->
     align-items: center;
 
-    background: #ffffff;
+    <script src="js/components/footer.js"></script>
+    <script src="js/components/modal.js"></script>
+    <script src="js/components/dialog.js"></script>
+    <script src="js/components/loading.js"></script>
+    <script src="js/components/interactions.js"></script>
+    <script src="js/components/notificationCarousel.js"></script>
 
-    font-family: "Courier New", monospace;
+    font-family: "Courier New", Courier, monospace;
 
-    color: #000000;
+    <!-- Features -->
+    
+    <script src="js/features/opening.js"></script>
+    <script src="js/features/home.js"></script>
+    <script src="js/features/user.js"></script>
+    <script src="js/features/challenge.js"></script>
+    <script src="js/features/archive.js"></script>
+    <script src="js/features/blitz.js"></script>
+    <script src="js/features/leaderboard.js"></script>
+    <script src="js/features/suggestions.js"></script>
+    <script src="js/features/notifications.js"></script>
+    <script src="js/features/about.js"></script>
+    
+    
+    <!-- App last -->
+    
+    <script src="js/core/app.js"></script>
+    
 
+</body>
 }
 
-
-/* ================================
-   Game Screen
-   ================================ */
+</html>
 
 
-.game-screen {
+/* ================================= */
+/* Application Container */
+/* ================================= */
+
+#app {
 
     width: 90%;
 
-    max-width: 600px;
+    max-width: 700px;
+
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
 
     text-align: center;
 
-    padding: 20px;
+
+    padding:
+
+        5vw;
 
 }
 
 
-/* ================================
-   Borders
-   ================================ */
 
+/* ================================= */
+/* Text */
+/* ================================= */
+
+h1,
+h2,
+h3,
+p {
+
+    text-align: center;
+
+    margin:
+
+        1rem
+
+        0;
+
+}
+
+
+
+/* ================================= */
+/* Titles */
+/* ================================= */
+
+h1 {
+
+    font-size: clamp(
+        2rem,
+        8vw,
+        4rem
+    );
+
+    letter-spacing:
+
+        0.15em;
+
+}
+
+
+h2 {
+
+    font-size: clamp(
+        1.2rem,
+        4vw,
+        2rem
+    );
+
+    letter-spacing:
+
+        0.1em;
+
+}
+
+
+
+h3 {
+
+    font-size:
+
+        clamp(
+            1rem,
+            3vw,
+            1.5rem
+        );
+
+}
+
+
+
+/* ================================= */
+/* Dividers */
+/* ================================= */
 
 .border,
 .divider {
 
-    white-space: nowrap;
+    width:
 
-    overflow: hidden;
+        100%;
 
-    font-size: 0.9rem;
+    text-align:
 
-}
-
-
-/* ================================
-   Title
-   ================================ */
-
-
-.title {
-
-    margin: 40px 0;
-
-}
-
-
-.title h1 {
-
-    font-size: 3rem;
-
-    margin: 0;
-
-    letter-spacing: 4px;
-
-}
-
-
-.title h2 {
-
-    font-size: 1.4rem;
-
-    margin-top: 15px;
-
-    letter-spacing: 3px;
+        center;
 
 }
 
 
 
-/* ================================
-   Menu
-   ================================ */
+/* ================================= */
+/* Menu */
+/* ================================= */
+
+#btnChallenge,
+#btnArchive,
+#btnBlitz,
+#btnLeaderboard,
+#btnSuggestions,
+#btnAbout {
 
 
-.menu {
+    cursor:
 
-    margin: 40px 0;
-
-}
+        pointer;
 
 
-.menu-item {
+    margin:
 
-    display: block;
-
-    width: 100%;
-
-    background: none;
-
-    border: none;
-
-    font-family: inherit;
-
-    font-size: 1.2rem;
-
-    padding: 15px;
-
-    cursor: pointer;
-
-    text-align: center;
-
-}
-
-
-/* Remove normal button styling */
-
-.menu-item:hover {
-
-    font-weight: bold;
-
-}
-
-
-/* Selected state */
-
-.menu-item.selected::before {
-
-    content: "> ";
+        0.8rem 0;
 
 }
 
 
 
-/* ================================
-   Mobile adjustments
-   ================================ */
+/* ================================= */
+/* Notifications */
+/* ================================= */
+
+#notificationNavigation {
+
+    display:
+
+        flex;
 
 
-@media (max-width: 500px) {
+    justify-content:
+
+        center;
 
 
-    .title h1 {
+    align-items:
 
-        font-size: 2.2rem;
-
-    }
+        center;
 
 
-    .title h2 {
+    gap:
 
-        font-size: 1rem;
+        1.5rem;
 
-    }
+}
 
 
-    .menu-item {
 
-        font-size: 1rem;
+/* ================================= */
+/* Footer */
+/* ================================= */
 
-        padding: 12px;
+#footer {
+
+    margin-top:
+
+        3rem;
+
+}
+
+
+
+/* ================================= */
+/* Mobile */
+/* ================================= */
+
+@media(max-width:600px) {
+
+
+    #app {
+
+        width:
+
+            95%;
+
+        padding:
+
+            1rem;
 
     }
 
