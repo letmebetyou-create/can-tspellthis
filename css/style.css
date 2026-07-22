@@ -1,38 +1,18 @@
-/* ================================= */
-/* BET YOU CAN'T SPELL THIS */
-/* Global Styles */
-/* ================================= */
+* ================================
+   Bet You - Main Style
+   ================================ */
 
-
-/* ================================= */
-/* Reset */
-/* ================================= */
 
 * {
-
     box-sizing: border-box;
-
 }
 
 
-html,
 body {
-
-    width: 100%;
-    height: 100%;
 
     margin: 0;
-    padding: 0;
 
-}
-
-
-
-/* ================================= */
-/* Body */
-/* ================================= */
-
-body {
+    min-height: 100vh;
 
     display: flex;
 
@@ -40,218 +20,166 @@ body {
 
     align-items: center;
 
+    background: #ffffff;
 
-    font-family: "Josefin Sans", sans-serif;
+    font-family: "Courier New", monospace;
+
+    color: #000000;
 
 }
 
 
-
-/* ================================= */
-/* Main App Container */
-/* ================================= */
-
-#app {
-
-    width: 100%;
-
-    max-width: 500px;
-
-    min-height: 500px;
+/* ================================
+   Game Screen
+   ================================ */
 
 
-    display: flex;
+.game-screen {
 
-    flex-direction: column;
+    width: 90%;
 
-    justify-content: center;
-
-    align-items: center;
-
+    max-width: 600px;
 
     text-align: center;
 
-
-    padding: 40px;
-
-}
-
-
-
-/* ================================= */
-/* Text */
-/* ================================= */
-
-h1,
-h2,
-h3,
-p {
-
-    margin:
-
-        12px
-
-        0;
+    padding: 20px;
 
 }
 
 
+/* ================================
+   Borders
+   ================================ */
 
-/* ================================= */
-/* Titles */
-/* ================================= */
 
-h1 {
+.border,
+.divider {
 
-    font-size: 42px;
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    font-size: 0.9rem;
+
+}
+
+
+/* ================================
+   Title
+   ================================ */
+
+
+.title {
+
+    margin: 40px 0;
+
+}
+
+
+.title h1 {
+
+    font-size: 3rem;
+
+    margin: 0;
 
     letter-spacing: 4px;
 
 }
 
 
-h2 {
+.title h2 {
 
-    font-size: 24px;
+    font-size: 1.4rem;
+
+    margin-top: 15px;
 
     letter-spacing: 3px;
 
 }
 
 
-h3 {
 
-    font-size: 18px;
+/* ================================
+   Menu
+   ================================ */
 
-    letter-spacing: 2px;
+
+.menu {
+
+    margin: 40px 0;
 
 }
 
 
+.menu-item {
 
-/* ================================= */
-/* Dividers */
-/* ================================= */
-
-.border {
+    display: block;
 
     width: 100%;
 
-    margin: 20px 0;
+    background: none;
 
-}
+    border: none;
 
+    font-family: inherit;
 
-.divider {
+    font-size: 1.2rem;
 
-    width: 100%;
-
-    margin: 15px 0;
-
-}
-
-
-
-/* ================================= */
-/* Menu Items */
-/* ================================= */
-
-#btnChallenge,
-#btnArchive,
-#btnBlitz,
-#btnLeaderboard,
-#btnSuggestions,
-#btnAbout {
-
-
-    margin:
-
-        14px
-
-        0;
-
+    padding: 15px;
 
     cursor: pointer;
 
+    text-align: center;
+
+}
+
+
+/* Remove normal button styling */
+
+.menu-item:hover {
+
+    font-weight: bold;
+
+}
+
+
+/* Selected state */
+
+.menu-item.selected::before {
+
+    content: "> ";
 
 }
 
 
 
-/* ================================= */
-/* Notifications */
-/* ================================= */
-
-#notificationNavigation {
+/* ================================
+   Mobile adjustments
+   ================================ */
 
 
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
+@media (max-width: 500px) {
 
 
-    gap: 20px;
+    .title h1 {
 
-
-    margin: 10px 0;
-
-}
-
-
-
-#notificationPrevious,
-#notificationNext {
-
-
-    cursor: pointer;
-
-
-}
-
-
-
-/* ================================= */
-/* Footer */
-/* ================================= */
-
-#footer {
-
-
-    margin-top: 30px;
-
-
-}
-
-
-.version {
-
-    font-size: 14px;
-
-    opacity: 0.7;
-
-}
-
-
-
-/* ================================= */
-/* Mobile */
-/* ================================= */
-
-@media(max-width:600px) {
-
-
-    #app {
-
-        padding: 20px;
+        font-size: 2.2rem;
 
     }
 
 
-    h1 {
+    .title h2 {
 
-        font-size: 34px;
+        font-size: 1rem;
+
+    }
+
+
+    .menu-item {
+
+        font-size: 1rem;
+
+        padding: 12px;
 
     }
 
