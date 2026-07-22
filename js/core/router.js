@@ -10,7 +10,6 @@
 
 const ROUTES = {
 
-
     opening: "pages/opening.html",
 
     home: "pages/home.html",
@@ -35,116 +34,183 @@ const ROUTES = {
 
     about: "pages/about.html"
 
-
 };
-
-
-
-// =================================
-// Load Page
-// =================================
-
-async function loadPage(pageName) {
-
-
-    const page =
-    ROUTES[routeName];
-
-
-    if (!page) {
-
-
-        console.error(
-            "Unknown page:",
-            pageName
-        );
-
-
-        return;
-
-    }
-
-
-
-    try {
-
-
-        const response =
-        await fetch(page);
-
-
-
-        const html =
-        await response.text();
-
-
-
-        document.getElementById("app").innerHTML = html;
-
-
-
-        STATE.CurrentPage =
-        pageName;
-
-
-
-        runPageInit(pageName);
-
-
-
-    }
-
-
-    catch(error) {
-
-
-        console.error(
-            "Unable to load page."
-        );
-
-
-        console.error(error);
-
-
-    }
-
-
-}
-
 
 
 // =================================
 // Page Initialisers
 // =================================
 
-function runPageInit(pageName) {
+const PAGE_INITIALISERS = {
+
+    opening: initOpening,
+
+    home: initHome,
+
+    username: initUsername,
+
+    recovery: initRecovery,
+
+    challengeIntro: initChallengeIntro,
+
+    challengeWord: initChallengeWord,
+
+    challengeResults: initChallengeResults,
+
+    archive: initArchive,
+
+    blitz: initBlitz,
+
+    leaderboard: initLeaderboard,
+
+    suggestions: initSuggestions,
+
+    about: initAbout
+
+};
 
 
-    switch(pageName) {
+// =================================
+// Load Page
+// =================================
+
+async function loadPage(routeName) {
 
 
-        case "opening":
-
-            initOpening();
-
-            break;
+    const page = ROUTES[routeName];
 
 
+    if (!page) {
 
-        case "home":
+        showRouterError(
+            "Unknown page.",
+            routeName
+        );
 
-            initHome();
+        return;
 
-            break;
+    }
 
 
+    try {
 
-        default:
 
-            break;
+        const response =
+            await fetch(page);
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                response.status +
+                " " +
+                response.statusText
+            );
+
+        }
+
+
+        const html =
+            await response.text();
+
+
+        document.getElementById("app").innerHTML =
+            html;
+
+
+        STATE.CurrentPage =
+            routeName;
+
+
+        runPageInitialiser(routeName);
 
 
     }
 
+    catch (error) {
+
+        console.error(error);
+
+        showRouterError(
+            "Unable to load page.",
+            routeName
+        );
+
+    }
+
+}
+
+
+// =================================
+// Run Page Initialiser
+// =================================
+
+function runPageInitialiser(routeName) {
+
+
+    const initialiser =
+        PAGE_INITIALISERS[routeName];
+
+
+    if (initialiser) {
+
+        initialiser();
+
+    }
+
+}
+
+
+// =================================
+// Router Error Page
+// =================================
+
+function showRouterError(message, routeName) {
+
+
+    document.getElementById("app").innerHTML = `
+
+        <div class="border">
+
+        ========================================
+
+        </div>
+
+
+        <h1>
+
+        PAGE ERROR
+
+        </h1>
+
+
+        <p>
+
+        ${message}
+
+        </p>
+
+
+        <p>
+
+        ${routeName}
+
+        </p>
+
+
+        <p onclick="loadPage('home')">
+
+        HOME
+
+        </p>
+
+
+        <div class="border">
+
+        ========================================
+
+        </div>
+
+    `;
 
 }
