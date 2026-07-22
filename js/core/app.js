@@ -5,25 +5,18 @@
 
 
 // =================================
-// Version
+// Initialise Application
 // =================================
 
-const APP_VERSION = "v0.1.0";
+function initialiseApp() {
 
+    loadPage("opening");
 
-// =================================
-// Application State
-// =================================
-
-const STATE = {
-
-    CurrentPage: null
-
-};
+}
 
 
 // =================================
 // Start Application
 // =================================
 
-loadPage("opening");
+initialiseApp();
