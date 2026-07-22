@@ -10,14 +10,6 @@
 
 const INTERACTION = {
 
-    HoverPrefix: "> ",
-
-    HoverSuffix: "",
-
-    ClickPrefix: "> ",
-
-    ClickSuffix: " <",
-
     ClickDelay: 120
 
 };
@@ -28,7 +20,11 @@ const INTERACTION = {
 // Make Interactive
 // =================================
 
-function makeInteractive(element, callback) {
+function makeInteractive(
+    element,
+    callback,
+    style = "menu"
+) {
 
 
     if (!element) {
@@ -45,49 +41,107 @@ function makeInteractive(element, callback) {
     element.style.cursor = "pointer";
 
 
+    // =================================
+    // Hover
+    // =================================
+
     element.addEventListener("mouseenter", function () {
 
-    element.textContent =
-        INTERACTION.HoverPrefix +
-        originalText;
+        element.style.fontWeight = "bold";
 
-    element.style.fontWeight =
-        "bold";
+
+        switch (style) {
+
+
+            case "menu":
+
+            case "button":
+
+                element.textContent =
+                    "> " +
+                    originalText;
+
+                break;
+
+
+            case "arrow":
+
+                element.textContent =
+                    originalText;
+
+                break;
+
+        }
+
 
     });
 
 
-    element.addEventListener("mouseleave", function () {
+    // =================================
+    // Leave
+    // =================================
 
-        element.textContent =
-            originalText;
+    element.addEventListener("mouseleave", function () {
 
         element.style.fontWeight =
             "normal";
 
+
+        element.textContent =
+            originalText;
+
     });
 
 
-    element.addEventListener("mousedown", function () {
+    // =================================
+    // Mouse Down
+    // =================================
 
-        element.textContent =
-            INTERACTION.ClickPrefix +
-            originalText +
-            INTERACTION.ClickSuffix;
+    element.addEventListener("mousedown", function () {
 
         element.style.fontWeight =
             "bold";
 
+
+        switch (style) {
+
+
+            case "menu":
+
+            case "button":
+
+                element.textContent =
+                    "> " +
+                    originalText +
+                    " <";
+
+                break;
+
+
+            case "arrow":
+
+                element.textContent =
+                    originalText;
+
+                break;
+
+        }
+
+
     });
 
 
+    // =================================
+    // Click
+    // =================================
+
     element.addEventListener("click", function () {
 
-    setTimeout(function () {
+        setTimeout(function () {
 
-        callback();
+            callback();
 
-    }, INTERACTION.ClickDelay);
+        }, INTERACTION.ClickDelay);
 
     });
 
