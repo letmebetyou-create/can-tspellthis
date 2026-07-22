@@ -1,132 +1,100 @@
-<!DOCTYPE html>
-<html lang="en-GB">
 /* ================================= */
 /* BET YOU CAN'T SPELL THIS */
 /* Global Styles */
 /* ================================= */
+* ================================
+   Bet You - Main Style
+   ================================ */
 
-<head>
 
-    <meta charset="UTF-8">
 /* ================================= */
 /* Reset */
 /* ================================= */
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
 * {
 
-    <title>Bet You Can't Spell This</title>
     box-sizing: border-box;
 
-    <link rel="stylesheet"
-          href="css/style.css">
 }
 
-    <link rel="stylesheet"
-          href="css/themes/default.css">
 
-</head>
 html,
 body {
 
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 
-<body>
     margin: 0;
     padding: 0;
 
-    <main id="app">
 }
 
-        <!-- Screen loads here -->
 
-    </main>
 
 /* ================================= */
 /* Body */
 /* ================================= */
 
-    <!-- Core -->
 body {
+    min-height: 100vh;
 
-    <script src="js/core/version.js"></script>
-    <script src="js/core/settings.js"></script>
-    <script src="js/core/actions.js"></script>
-    <script src="js/core/state.js"></script>
-    <script src="js/core/storage.js"></script>
-    <script src="js/core/api.js"></script>
-    <script src="js/core/router.js"></script>
     display: flex;
 
     justify-content: center;
 
-    <!-- Components -->
     align-items: center;
 
-    <script src="js/components/footer.js"></script>
-    <script src="js/components/modal.js"></script>
-    <script src="js/components/dialog.js"></script>
-    <script src="js/components/loading.js"></script>
-    <script src="js/components/interactions.js"></script>
-    <script src="js/components/notificationCarousel.js"></script>
+    background: #ffffff;
 
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Josefin Sans", sans-serif;
 
-    <!-- Features -->
-    
-    <script src="js/features/opening.js"></script>
-    <script src="js/features/home.js"></script>
-    <script src="js/features/user.js"></script>
-    <script src="js/features/challenge.js"></script>
-    <script src="js/features/archive.js"></script>
-    <script src="js/features/blitz.js"></script>
-    <script src="js/features/leaderboard.js"></script>
-    <script src="js/features/suggestions.js"></script>
-    <script src="js/features/notifications.js"></script>
-    <script src="js/features/about.js"></script>
-    
-    
-    <!-- App last -->
-    
-    <script src="js/core/app.js"></script>
-    
-
-</body>
 }
 
-</html>
 
 
 /* ================================= */
-/* Application Container */
+/* Main App Container */
 /* ================================= */
 
 #app {
+    font-family: "Courier New", monospace;
 
-    width: 90%;
+    width: 100%;
+    color: #000000;
 
-    max-width: 700px;
+    max-width: 500px;
+}
 
+    min-height: 500px;
+
+/* ================================
+   Game Screen
+   ================================ */
 
     display: flex;
 
     flex-direction: column;
+.game-screen {
+
+    justify-content: center;
 
     align-items: center;
+    width: 90%;
 
+    max-width: 600px;
 
     text-align: center;
 
 
-    padding:
-
-        5vw;
+    padding: 40px;
+    padding: 20px;
 
 }
 
 
+/* ================================
+   Borders
+   ================================ */
 
 /* ================================= */
 /* Text */
@@ -136,89 +104,92 @@ h1,
 h2,
 h3,
 p {
-
-    text-align: center;
+.border,
+.divider {
 
     margin:
+    white-space: nowrap;
 
-        1rem
+        12px
+    overflow: hidden;
 
         0;
+    font-size: 0.9rem;
 
 }
 
 
+/* ================================
+   Title
+   ================================ */
 
 /* ================================= */
 /* Titles */
 /* ================================= */
 
 h1 {
+.title {
 
-    font-size: clamp(
-        2rem,
-        8vw,
-        4rem
-    );
+    font-size: 42px;
 
-    letter-spacing:
-
-        0.15em;
+    letter-spacing: 4px;
+    margin: 40px 0;
 
 }
 
 
 h2 {
 
-    font-size: clamp(
-        1.2rem,
-        4vw,
-        2rem
-    );
+    font-size: 24px;
 
-    letter-spacing:
-
-        0.1em;
+    letter-spacing: 3px;
 
 }
 
-
+.title h1 {
 
 h3 {
+    font-size: 3rem;
 
-    font-size:
+    font-size: 18px;
+    margin: 0;
 
-        clamp(
-            1rem,
-            3vw,
-            1.5rem
-        );
+    letter-spacing: 2px;
+    letter-spacing: 4px;
 
 }
 
 
+.title h2 {
 
 /* ================================= */
 /* Dividers */
 /* ================================= */
 
-.border,
+.border {
+
+    width: 100%;
+
+    margin: 20px 0;
+    font-size: 1.4rem;
+
+}
+
+
 .divider {
+    margin-top: 15px;
 
-    width:
+    width: 100%;
 
-        100%;
-
-    text-align:
-
-        center;
+    margin: 15px 0;
+    letter-spacing: 3px;
 
 }
 
 
 
 /* ================================= */
-/* Menu */
+/* Menu Items */
 /* ================================= */
 
 #btnChallenge,
@@ -229,47 +200,72 @@ h3 {
 #btnAbout {
 
 
-    cursor:
-
-        pointer;
-
-
     margin:
 
-        0.8rem 0;
+        14px
+
+        0;
+/* ================================
+   Menu
+   ================================ */
+
+
+    cursor: pointer;
+.menu {
+
+    margin: 40px 0;
 
 }
 
 
+.menu-item {
 
 /* ================================= */
 /* Notifications */
 /* ================================= */
+    display: block;
 
 #notificationNavigation {
+    width: 100%;
 
-    display:
+    background: none;
 
-        flex;
+    display: flex;
+    border: none;
 
+    justify-content: center;
+    font-family: inherit;
 
-    justify-content:
+    align-items: center;
+    font-size: 1.2rem;
 
-        center;
+    padding: 15px;
 
+    gap: 20px;
 
-    align-items:
+    cursor: pointer;
 
-        center;
-
-
-    gap:
-
-        1.5rem;
+    margin: 10px 0;
+    text-align: center;
 
 }
 
 
+/* Remove normal button styling */
+
+#notificationPrevious,
+#notificationNext {
+
+
+    cursor: pointer;
+.menu-item:hover {
+
+    font-weight: bold;
+
+}
+
+
+/* Selected state */
 
 /* ================================= */
 /* Footer */
@@ -277,32 +273,54 @@ h3 {
 
 #footer {
 
-    margin-top:
 
-        3rem;
+    margin-top: 30px;
+.menu-item.selected::before {
+
+    content: "> ";
 
 }
 
 
+.version {
+
+    font-size: 14px;
+/* ================================
+   Mobile adjustments
+   ================================ */
+
+    opacity: 0.7;
+
+}
+@media (max-width: 500px) {
+
+
+    .title h1 {
 
 /* ================================= */
 /* Mobile */
 /* ================================= */
+        font-size: 2.2rem;
 
 @media(max-width:600px) {
+    }
 
 
     #app {
+    .title h2 {
 
-        width:
-
-            95%;
-
-        padding:
-
-            1rem;
+        padding: 20px;
+        font-size: 1rem;
 
     }
 
 
-}
+    h1 {
+    .menu-item {
+
+        font-size: 1rem;
+
+        font-size: 34px;
+        padding: 12px;
+
+    }
