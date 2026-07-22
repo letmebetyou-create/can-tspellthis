@@ -47,10 +47,12 @@ function makeInteractive(element, callback) {
 
     element.addEventListener("mouseenter", function () {
 
-        element.textContent =
-            INTERACTION.HoverPrefix +
-            originalText +
-            INTERACTION.HoverSuffix;
+    element.textContent =
+        INTERACTION.HoverPrefix +
+        originalText;
+
+    element.style.fontWeight =
+        "bold";
 
     });
 
@@ -79,13 +81,13 @@ function makeInteractive(element, callback) {
     });
 
 
-    element.addEventListener("mouseup", function () {
+    element.addEventListener("click", function () {
 
-        setTimeout(function () {
+    setTimeout(function () {
 
-            callback();
+        callback();
 
-        }, INTERACTION.ClickDelay);
+    }, INTERACTION.ClickDelay);
 
     });
 
