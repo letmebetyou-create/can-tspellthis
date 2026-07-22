@@ -37,38 +37,6 @@ const ROUTES = {
 };
 
 
-// =================================
-// Page Initialisers
-// =================================
-
-const PAGE_INITIALISERS = {
-
-    opening: initOpening,
-
-    home: initHome,
-
-    username: initUsername,
-
-    recovery: initRecovery,
-
-    challengeIntro: initChallengeIntro,
-
-    challengeWord: initChallengeWord,
-
-    challengeResults: initChallengeResults,
-
-    archive: initArchive,
-
-    blitz: initBlitz,
-
-    leaderboard: initLeaderboard,
-
-    suggestions: initSuggestions,
-
-    about: initAbout
-
-};
-
 
 // =================================
 // Load Page
@@ -127,6 +95,7 @@ async function loadPage(routeName) {
 
     }
 
+
     catch (error) {
 
         console.error(error);
@@ -138,7 +107,9 @@ async function loadPage(routeName) {
 
     }
 
+
 }
+
 
 
 // =================================
@@ -148,21 +119,29 @@ async function loadPage(routeName) {
 function runPageInitialiser(routeName) {
 
 
-    const initialiser =
-        PAGE_INITIALISERS[routeName];
+    const functionName =
+        "init" +
+        routeName.charAt(0).toUpperCase() +
+        routeName.slice(1);
 
 
-    if (initialiser) {
+    const initialisePage =
+        window[functionName];
 
-        initialiser();
+
+    if (typeof initialisePage === "function") {
+
+        initialisePage();
 
     }
+
 
 }
 
 
+
 // =================================
-// Router Error Page
+// Router Error
 // =================================
 
 function showRouterError(message, routeName) {
@@ -198,13 +177,6 @@ function showRouterError(message, routeName) {
         </p>
 
 
-        <p onclick="loadPage('home')">
-
-        HOME
-
-        </p>
-
-
         <div class="border">
 
         ========================================
@@ -212,5 +184,6 @@ function showRouterError(message, routeName) {
         </div>
 
     `;
+
 
 }
