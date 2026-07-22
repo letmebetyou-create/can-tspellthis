@@ -82,7 +82,8 @@ body {
 
 .home-title,
 .home-notifications,
-.home-menu {
+.home-menu,
+.version {
 
     width: 100%;
 
@@ -189,7 +190,7 @@ body {
 
 .carousel p {
 
-    margin: 5;
+    margin: 5px;
 
 }
 
