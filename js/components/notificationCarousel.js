@@ -23,10 +23,7 @@ const DEFAULT_NOTIFICATIONS = [
 function initNotificationCarousel() {
 
 
-    if (
-        !STATE.Notifications ||
-        STATE.Notifications.length === 0
-    ) {
+    if (STATE.Notifications.length === 0) {
 
         STATE.Notifications =
             DEFAULT_NOTIFICATIONS.slice();
@@ -37,10 +34,101 @@ function initNotificationCarousel() {
     STATE.CurrentNotification = 0;
 
 
+    setupNotificationButtons();
+
+
     updateNotification();
 
 
-    setupNotificationButtons();
+}
+
+
+
+// =================================
+// Setup Buttons
+// =================================
+
+function setupNotificationButtons() {
+
+
+    makeInteractive(
+
+        document.getElementById(
+            "notificationPrevious"
+        ),
+
+        previousNotification
+
+    );
+
+
+    makeInteractive(
+
+        document.getElementById(
+            "notificationNext"
+        ),
+
+        nextNotification
+
+    );
+
+
+}
+
+
+
+// =================================
+// Previous Notification
+// =================================
+
+function previousNotification() {
+
+
+    if (STATE.CurrentNotification === 0) {
+
+        STATE.CurrentNotification =
+            STATE.Notifications.length - 1;
+
+    }
+
+    else {
+
+        STATE.CurrentNotification--;
+
+    }
+
+
+    updateNotification();
+
+
+}
+
+
+
+// =================================
+// Next Notification
+// =================================
+
+function nextNotification() {
+
+
+    if (
+        STATE.CurrentNotification >=
+        STATE.Notifications.length - 1
+    ) {
+
+        STATE.CurrentNotification = 0;
+
+    }
+
+    else {
+
+        STATE.CurrentNotification++;
+
+    }
+
+
+    updateNotification();
 
 
 }
@@ -73,104 +161,20 @@ function updateNotification() {
     }
 
 
-    const total =
+    counter.textContent =
+
+        (STATE.CurrentNotification + 1) +
+
+        " / " +
+
         STATE.Notifications.length;
 
 
-    const current =
-        STATE.CurrentNotification + 1;
-
-
-    counter.textContent =
-        "< " +
-        current +
-        " / " +
-        total +
-        " >";
-
-
     text.textContent =
+
         STATE.Notifications[
             STATE.CurrentNotification
         ];
-
-
-}
-
-
-
-// =================================
-// Previous Notification
-// =================================
-
-function previousNotification() {
-
-
-    if (
-        STATE.CurrentNotification > 0
-    ) {
-
-        STATE.CurrentNotification--;
-
-    }
-    else {
-
-        STATE.CurrentNotification =
-            STATE.Notifications.length - 1;
-
-    }
-
-
-    updateNotification();
-
-
-}
-
-
-
-// =================================
-// Next Notification
-// =================================
-
-function nextNotification() {
-
-
-    if (
-        STATE.CurrentNotification <
-        STATE.Notifications.length - 1
-    ) {
-
-        STATE.CurrentNotification++;
-
-    }
-    else {
-
-        STATE.CurrentNotification = 0;
-
-    }
-
-
-    updateNotification();
-
-
-}
-
-
-
-// =================================
-// Setup Buttons
-// =================================
-
-function setupNotificationButtons() {
-
-
-    // Version 1
-
-    // Placeholder.
-
-    // We'll make the arrows clickable
-    // once we redesign the notification
-    // layout.
 
 
 }
