@@ -83,7 +83,7 @@ body {
 .home-title,
 .home-notifications,
 .home-menu,
-.version {
+#footer {
 
     width: 100%;
 
@@ -194,6 +194,23 @@ body {
 
 }
 
+/* ================================
+   Notification Text
+   ================================ */
+
+#notificationText {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 10px auto;
+
+    text-align: center;
+
+    line-height: 1.5;
+
+}
 
 /* ================================
    Footer
@@ -271,7 +288,6 @@ body {
    Mobile
    ================================ */
 
-
 @media (max-width: 500px) {
 
 
@@ -280,6 +296,13 @@ body {
         width: 95%;
 
         padding: 15px;
+
+    }
+
+
+    #notificationText {
+
+        max-width: 90%;
 
     }
 
