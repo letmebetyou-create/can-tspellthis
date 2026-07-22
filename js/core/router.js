@@ -48,7 +48,7 @@ async function loadPage(pageName) {
 
 
     const page =
-    ROUTES[pageName];
+    ROUTES[routeName];
 
 
     if (!page) {
