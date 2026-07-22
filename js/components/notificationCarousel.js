@@ -5,123 +5,64 @@
 
 
 // =================================
-// Default Notifications
-// =================================
-
-const DEFAULT_NOTIFICATIONS = [
-
-    "Welcome to Bet You Can't Spell This."
-
-];
-
-
-
-// =================================
-// Initialise Notification Carousel
+// Initialise
 // =================================
 
 function initNotificationCarousel() {
 
 
-    if (STATE.Notifications.length === 0) {
-
-        STATE.Notifications =
-            DEFAULT_NOTIFICATIONS.slice();
-
-    }
-
-
-    STATE.CurrentNotification = 0;
-
-
-    setupNotificationButtons();
-
-
-    updateNotification();
-
-
-}
-
-
-
-// =================================
-// Setup Buttons
-// =================================
-
-function setupNotificationButtons() {
-
-
-    makeInteractive(
-
+    const previous =
         document.getElementById(
             "notificationPrevious"
-        ),
-
-        previousNotification
-
-    );
+        );
 
 
-    makeInteractive(
-
+    const next =
         document.getElementById(
             "notificationNext"
-        ),
-
-        nextNotification
-
-    );
+        );
 
 
-}
+    if (!previous || !next) {
 
-
-
-// =================================
-// Previous Notification
-// =================================
-
-function previousNotification() {
-
-
-    if (STATE.CurrentNotification === 0) {
-
-        STATE.CurrentNotification =
-            STATE.Notifications.length - 1;
+        return;
 
     }
 
-    else {
 
-        STATE.CurrentNotification--;
 
-    }
+    previous.onclick = function() {
+
+        previousNotification();
+
+    };
+
+
+    next.onclick = function() {
+
+        nextNotification();
+
+    };
 
 
     updateNotification();
 
-
 }
 
 
 
 // =================================
-// Next Notification
+// Navigation
 // =================================
 
 function nextNotification() {
 
 
     if (
-        STATE.CurrentNotification >=
+        STATE.CurrentNotification
+        <
         STATE.Notifications.length - 1
     ) {
-
-        STATE.CurrentNotification = 0;
-
-    }
-
-    else {
 
         STATE.CurrentNotification++;
 
@@ -130,13 +71,34 @@ function nextNotification() {
 
     updateNotification();
 
+}
+
+
+
+// =================================
+// Previous
+// =================================
+
+function previousNotification() {
+
+
+    if (
+        STATE.CurrentNotification > 0
+    ) {
+
+        STATE.CurrentNotification--;
+
+    }
+
+
+    updateNotification();
 
 }
 
 
 
 // =================================
-// Update Notification
+// Update Display
 // =================================
 
 function updateNotification() {
@@ -154,6 +116,7 @@ function updateNotification() {
         );
 
 
+
     if (!counter || !text) {
 
         return;
@@ -161,20 +124,38 @@ function updateNotification() {
     }
 
 
-    counter.textContent =
 
-        (STATE.CurrentNotification + 1) +
-
-        " / " +
-
-        STATE.Notifications.length;
+    const notifications =
+        STATE.Notifications;
 
 
-    text.textContent =
 
-        STATE.Notifications[
+    if (
+        notifications.length === 0
+    ) {
+
+
+        counter.innerHTML =
+            "1 / 1";
+
+
+        text.innerHTML =
+            "Welcome to Bet You Can't Spell This.";
+
+
+        return;
+
+    }
+
+
+
+    counter.innerHTML =
+        `${STATE.CurrentNotification + 1} / ${notifications.length}`;
+
+
+    text.innerHTML =
+        notifications[
             STATE.CurrentNotification
         ];
-
 
 }
