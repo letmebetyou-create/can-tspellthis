@@ -1,46 +1,29 @@
 // =================================
 // BET YOU CAN'T SPELL THIS
-// Application
+// App
 // =================================
+
+
+// =================================
+// Version
+// =================================
+
+const APP_VERSION = "v0.1.0";
+
+
+// =================================
+// Application State
+// =================================
+
+const STATE = {
+
+    CurrentPage: null
+
+};
 
 
 // =================================
 // Start Application
 // =================================
 
-async function startApp() {
-
-    console.log("=================================");
-    console.log(APP.name);
-    console.log(APP.version);
-    console.log("=================================");
-
-    // Load settings
-
-    await loadSettings();
-
-    // Load first page
-
-    await loadPage(
-        SETTINGS.StartPage
-    );
-
-}
-
-
-
-// =================================
-// Application Ready
-// =================================
-
-document.addEventListener(
-
-    "DOMContentLoaded",
-
-    function () {
-
-        startApp();
-
-    }
-
-);
+loadPage("opening");
