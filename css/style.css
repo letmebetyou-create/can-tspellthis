@@ -1,38 +1,16 @@
-/* ================================= */
-/* BET YOU CAN'T SPELL THIS */
-/* Main Style */
-/* ================================= */
+* ================================
+   Bet You - Main Style
+   ================================ */
 
-
-/* ================================= */
-/* Reset */
-/* ================================= */
 
 * {
-
     box-sizing: border-box;
-
 }
 
 
-html,
 body {
-
-    width: 100%;
-    height: 100%;
 
     margin: 0;
-    padding: 0;
-
-}
-
-
-
-/* ================================= */
-/* Body */
-/* ================================= */
-
-body {
 
     min-height: 100vh;
 
@@ -40,36 +18,27 @@ body {
 
     justify-content: center;
 
-    align-items: flex-start;
-
+    align-items: center;
 
     background: #ffffff;
 
-    color: #000000;
-
     font-family: "Courier New", monospace;
+
+    color: #000000;
 
 }
 
 
+/* ================================
+   Game Screen
+   ================================ */
 
-/* ================================= */
-/* Application Container */
-/* ================================= */
 
-#app {
+.game-screen {
 
     width: 90%;
 
     max-width: 600px;
-
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
 
     text-align: center;
 
@@ -78,111 +47,13 @@ body {
 }
 
 
+/* ================================
+   Borders
+   ================================ */
 
-/* Make all sections fill app width */
-
-#app > * {
-
-    width: 100%;
-
-}
-
-
-
-/* ================================= */
-/* Game Screen */
-/* ================================= */
-
-.game-screen {
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    text-align: center;
-
-}
-
-
-
-/* ================================= */
-/* Text */
-/* ================================= */
-
-h1,
-h2,
-h3,
-p {
-
-    text-align: center;
-
-    margin: 0;
-
-}
-
-
-
-/* ================================= */
-/* Title */
-/* ================================= */
-
-.title {
-
-    width: 100%;
-
-    text-align: center;
-
-    margin: 40px 0;
-
-}
-
-
-.title h1 {
-
-    font-size: clamp(
-        2.2rem,
-        8vw,
-        3rem
-    );
-
-    margin: 0;
-
-    letter-spacing: 4px;
-
-}
-
-
-
-.title h2 {
-
-    font-size: clamp(
-        1rem,
-        4vw,
-        1.4rem
-    );
-
-    margin-top: 15px;
-
-    letter-spacing: 3px;
-
-}
-
-
-
-/* ================================= */
-/* Borders */
-/* ================================= */
 
 .border,
 .divider {
-
-    width: 100%;
-
-    text-align: center;
 
     white-space: nowrap;
 
@@ -193,21 +64,51 @@ p {
 }
 
 
+/* ================================
+   Title
+   ================================ */
 
-/* ================================= */
-/* Menu */
-/* ================================= */
 
-.menu {
+.title {
 
-    width: 100%;
-
-    text-align: center;
-
-    margin: 20px 0;
+    margin: 40px 0;
 
 }
 
+
+.title h1 {
+
+    font-size: 3rem;
+
+    margin: 0;
+
+    letter-spacing: 4px;
+
+}
+
+
+.title h2 {
+
+    font-size: 1.4rem;
+
+    margin-top: 15px;
+
+    letter-spacing: 3px;
+
+}
+
+
+
+/* ================================
+   Menu
+   ================================ */
+
+
+.menu {
+
+    margin: 40px 0;
+
+}
 
 
 .menu-item {
@@ -220,14 +121,11 @@ p {
 
     border: none;
 
-
     font-family: inherit;
 
     font-size: 1.2rem;
 
-
     padding: 15px;
-
 
     cursor: pointer;
 
@@ -236,6 +134,7 @@ p {
 }
 
 
+/* Remove normal button styling */
 
 .menu-item:hover {
 
@@ -244,6 +143,7 @@ p {
 }
 
 
+/* Selected state */
 
 .menu-item.selected::before {
 
@@ -253,72 +153,24 @@ p {
 
 
 
-/* ================================= */
-/* Notifications */
-/* ================================= */
-
-#notificationNavigation {
-
-    width: 100%;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
+/* ================================
+   Mobile adjustments
+   ================================ */
 
 
-    gap: 20px;
-
-    margin: 10px 0;
-
-}
+@media (max-width: 500px) {
 
 
+    .title h1 {
 
-#notificationPrevious,
-#notificationNext {
+        font-size: 2.2rem;
 
-    cursor: pointer;
-
-}
+    }
 
 
+    .title h2 {
 
-/* ================================= */
-/* Footer */
-/* ================================= */
-
-#footer {
-
-    margin-top: 30px;
-
-}
-
-
-
-.version {
-
-    font-size: 14px;
-
-    opacity: 0.7;
-
-}
-
-
-
-/* ================================= */
-/* Mobile */
-/* ================================= */
-
-@media(max-width:600px) {
-
-
-    #app {
-
-        width: 95%;
-
-        padding: 20px;
+        font-size: 1rem;
 
     }
 
