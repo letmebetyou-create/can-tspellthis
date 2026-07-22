@@ -1,46 +1,112 @@
 // =================================
 // BET YOU CAN'T SPELL THIS
-// Home Feature
+// Home
 // =================================
 
 
-
 // =================================
-// Initialise Home Screen
+// Initialise Home
 // =================================
 
 function initHome() {
 
 
-    const buttons =
-        document.querySelectorAll(".menu-item");
+    initFooter();
+
+
+    initNotificationCarousel();
+
+
+    setupHomeMenu();
+
+
+}
 
 
 
-    buttons.forEach(function(button) {
+// =================================
+// Home Menu
+// =================================
+
+function setupHomeMenu() {
 
 
-        button.addEventListener(
-            "click",
-            function() {
+    makeInteractive(
+
+        document.getElementById("btnChallenge"),
+
+        function () {
+
+            loadPage("challengeIntro");
+
+        }
+
+    );
 
 
-                const page =
-                    button.dataset.page;
+    makeInteractive(
+
+        document.getElementById("btnArchive"),
+
+        function () {
+
+            loadPage("archive");
+
+        }
+
+    );
 
 
-                if (page) {
+    makeInteractive(
 
-                    loadPage(page);
+        document.getElementById("btnBlitz"),
 
-                }
+        function () {
+
+            loadPage("blitz");
+
+        }
+
+    );
 
 
-            }
-        );
+    makeInteractive(
+
+        document.getElementById("btnLeaderboard"),
+
+        function () {
+
+            loadPage("leaderboard");
+
+        }
+
+    );
 
 
-    });
+    makeInteractive(
+
+        document.getElementById("btnSuggestions"),
+
+        function () {
+
+            loadPage("suggestions");
+
+        }
+
+    );
+
+
+    makeInteractive(
+
+        document.getElementById("btnAbout"),
+
+        function () {
+
+            loadPage("about");
+
+        }
+
+    );
 
 
 }
