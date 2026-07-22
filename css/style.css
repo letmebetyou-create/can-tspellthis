@@ -55,10 +55,10 @@ body {
 .border,
 .divider {
 
+    width: 100%;
+    text-align: center;
     white-space: nowrap;
-
     overflow: hidden;
-
     font-size: 0.9rem;
 
 }
@@ -71,6 +71,8 @@ body {
 
 .title {
 
+    width: 100%;
+    text-align: center;
     margin: 40px 0;
 
 }
