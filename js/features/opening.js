@@ -1,7 +1,16 @@
+```javascript
 // =================================
 // BET YOU CAN'T SPELL THIS
 // Opening Screen
 // =================================
+
+
+// =================================
+// Storage
+// =================================
+
+const USER_STORAGE_KEY =
+    "BET_YOU_USER";
 
 
 // =================================
@@ -51,9 +60,26 @@ function startApp() {
 
     setTimeout(function () {
 
-        loadPage("home");
+
+        const user =
+            loadStorage(
+                USER_STORAGE_KEY
+            );
+
+
+        if (user) {
+
+            loadPage("home");
+
+            return;
+
+        }
+
+
+        loadPage("username");
+
 
     }, 1000);
 
-
 }
+```
