@@ -1,125 +1,138 @@
-```html
 <!-- ================================= -->
 <!-- BET YOU CAN'T SPELL THIS          -->
-<!-- New Account Recovery Code         -->
+<!-- Recovery                         -->
 <!-- ================================= -->
 
 
 <div class="border">
 
-==================================================
+========================================
 
 </div>
 
 
-<!-- ================================= -->
-<!-- Recovery Code                    -->
-<!-- ================================= -->
 
-<section class="recovery-screen">
+<h1 id="recoveryTitle">
 
+RECOVERY
 
-    <!-- =================================
-         Title
-         ================================= -->
-
-    <header class="recovery-title">
-
-        <h1>
-            ACCOUNT CREATED
-        </h1>
-
-    </header>
+</h1>
 
 
-    <div class="divider">
-        --------------------------------------------------
-    </div>
+
+<div class="divider">
+
+----------------------------------------
+
+</div>
 
 
-    <!-- =================================
-         Recovery Information
-         ================================= -->
 
-    <section class="recovery-info">
-
-        <p>
-            Your account has been created.
-        </p>
-
-        <p>
-            This is your recovery code.
-        </p>
-
-        <p>
-            Keep it somewhere safe.
-        </p>
-
-        <p>
-            You will need it if you
-            switch to another device.
-        </p>
-
-    </section>
+<!-- ================================ -->
+<!-- New Account Recovery Code        -->
+<!-- ================================ -->
 
 
-    <!-- =================================
-         Recovery Code
-         ================================= -->
-
-    <section class="recovery-code-section">
+<section id="newRecoverySection">
 
 
-        <h2>
-            YOUR RECOVERY CODE
-        </h2>
+<p>
+
+YOUR RECOVERY CODE
+
+</p>
 
 
-        <p
-            id="recoveryCode"
-            class="recovery-code"
-        >
-            ---
-        </p>
+<h2 id="recoveryCode">
+
+</h2>
 
 
-    </section>
+<p>
+
+WRITE THIS DOWN.
+
+</p>
 
 
-    <div class="divider">
-        --------------------------------------------------
-    </div>
+<p>
+
+YOU WILL NEED THIS IF YOU
+CHANGE DEVICES.
+
+</p>
 
 
-    <!-- =================================
-         Continue
-         ================================= -->
+<button id="recoveryContinueButton">
 
-    <section class="recovery-actions">
+CONTINUE
 
-
-        <button
-            id="recoveryContinueButton"
-            type="button"
-        >
-            CONTINUE
-        </button>
-
-
-    </section>
+</button>
 
 
 </section>
 
 
-<div class="border">
 
-==================================================
+<!-- ================================ -->
+<!-- Recover Existing Account         -->
+<!-- ================================ -->
+
+
+<section id="recoverAccountSection">
+
+
+<p>
+
+ENTER YOUR RECOVERY CODE
+
+</p>
+
+
+<input
+
+    id="recoveryInput"
+
+    type="text"
+
+    placeholder="XXX-XXX-XXX"
+
+    autocomplete="off"
+
+    autocorrect="off"
+
+    spellcheck="false"
+
+>
+
+
+<p id="recoveryError">
+
+</p>
+
+
+
+<button id="recoverButton">
+
+RECOVER
+
+</button>
+
+
+</section>
+
+
+
+<div class="divider">
+
+----------------------------------------
 
 </div>
-<script src="../js/core/actions.js"></script>
-<script src="../js/core/api.js"></script>
-<script src="../js/core/storage.js"></script>
-<script src="../js/features/user.js"></script>
-```
 
+
+
+<div class="border">
+
+========================================
+
+</div>
