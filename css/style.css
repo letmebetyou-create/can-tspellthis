@@ -582,3 +582,158 @@ body {
 }
 ```
 
+```css
+/* =================================
+   RECOVERY CODE
+   ================================= */
+
+
+/* =================================
+   Recovery Screen
+   ================================= */
+
+.recovery-screen {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+}
+
+
+/* =================================
+   Title
+   ================================= */
+
+.recovery-title {
+
+    width: 100%;
+
+}
+
+
+.recovery-title h1 {
+
+    margin: 0;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 28px;
+
+    font-weight: normal;
+
+}
+
+
+/* =================================
+   Information
+   ================================= */
+
+.recovery-info {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+}
+
+
+.recovery-info p {
+
+    margin: 12px 0;
+
+    font-family: "Courier New", monospace;
+
+    line-height: 1.5;
+
+}
+
+
+/* =================================
+   Recovery Code Section
+   ================================= */
+
+.recovery-code-section {
+
+    width: 100%;
+
+    margin: 30px auto;
+
+}
+
+
+.recovery-code-section h2 {
+
+    margin: 0 0 16px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 18px;
+
+    font-weight: normal;
+
+}
+
+
+.recovery-code {
+
+    margin: 0;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 24px;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* =================================
+   Actions
+   ================================= */
+
+.recovery-actions {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+.recovery-actions button {
+
+    padding: 10px 24px;
+
+    border: 1px solid currentColor;
+
+    background: transparent;
+
+    color: inherit;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.recovery-actions button:hover {
+
+    background: currentColor;
+
+    color: var(--background-color, #000);
+
+}
+```
+
