@@ -346,7 +346,8 @@ body {
 
 }
 
-```css
+
+
 /* =================================
    CREATE ACCOUNT
    ================================= */
@@ -563,8 +564,7 @@ body {
     color: var(--background-color, #000);
 
 }
-```
-```css
+
 /* =================================
    Username Error
    ================================= */
@@ -580,13 +580,49 @@ body {
     font-size: 14px;
 
 }
-```
 
-```css
-/* =================================
-   RECOVERY CODE
-   ================================= */
 
+/* ================================= */
+/* Recovery                          */
+/* ================================= */
+
+
+.recovery-section {
+
+    text-align: center;
+
+}
+
+
+#recoverAccountSection {
+
+    display: none;
+
+}
+
+
+#recoveryInput {
+
+    display: block;
+
+    margin: 20px auto;
+
+    width: 250px;
+
+    text-align: center;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 18px;
+
+}
+
+
+#recoveryCode {
+
+    letter-spacing: 4px;
+
+}
 
 /* =================================
    Recovery Screen
