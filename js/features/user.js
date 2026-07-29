@@ -292,7 +292,7 @@ function setUsernameLoading(isLoading) {
 }
 
 
-```javascript
+
 // =================================
 // Recovery Code Screen
 // =================================
@@ -346,8 +346,4 @@ function initRecovery() {
 
 }
 
-
-// =================================
-// Start
-// =================================
 
