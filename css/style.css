@@ -564,4 +564,21 @@ body {
 
 }
 ```
+```css
+/* =================================
+   Username Error
+   ================================= */
+
+.username-error {
+
+    min-height: 20px;
+
+    margin: 8px 0 0;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 14px;
+
+}
+```
 
