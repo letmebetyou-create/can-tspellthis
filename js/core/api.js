@@ -8,12 +8,7 @@
 // API URL
 // =================================
 
-// TODO
-// Replace with your deployed Apps Script Web App URL.
-
-const API_URL = "";
-
-
+const API_URL = "https://script.google.com/macros/s/AKfycbx-NQN_oZHN9hksLidfwIWUbgiqFTPHSEU2neMtnzATxZecNd_HOWeBfF2SnVNy8JjP/exec";
 
 // =================================
 // Call Backend
@@ -144,7 +139,7 @@ async function createUser(username) {
         ACTIONS.CreateUser,
 
         {
-            Username: username
+            username: username
         }
 
     );
@@ -259,7 +254,7 @@ async function submitSuggestion(word) {
         ACTIONS.SubmitSuggestion,
 
         {
-            Word: word
+            word: word
         }
 
     );
