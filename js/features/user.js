@@ -292,9 +292,80 @@ function setUsernameLoading(isLoading) {
 }
 
 
+```javascript
+// =================================
+// Recovery Code Screen
+// =================================
+
+function initRecovery() {
+
+    const recoveryCodeElement =
+        document.getElementById("recoveryCode");
+
+
+    const continueButton =
+        document.getElementById(
+            "recoveryContinueButton"
+        );
+
+
+    if (!recoveryCodeElement || !continueButton) {
+
+        return;
+
+    }
+
+
+    const user =
+        loadStorage(
+            USER_STORAGE_KEY
+        );
+
+
+    if (!user || !user.recoveryCode) {
+
+        loadPage("username");
+
+        return;
+
+    }
+
+
+    recoveryCodeElement.textContent =
+        user.recoveryCode;
+
+
+    continueButton.addEventListener(
+        "click",
+        function() {
+
+            loadPage("home");
+
+        }
+    );
+
+}
+
+
 // =================================
 // Start
 // =================================
 
-initUsername();
+if (
+    document.getElementById("username")
+) {
+
+    initUsername();
+
+}
+
+
+if (
+    document.getElementById("recoveryCode")
+) {
+
+    initRecovery();
+
+}
 ```
+
