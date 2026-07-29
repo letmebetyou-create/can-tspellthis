@@ -299,13 +299,34 @@ function setUsernameLoading(isLoading) {
 
 
 // =================================
-// Recovery Code Screen
+// Initialise Recovery Screen
 // =================================
 
 function initRecovery() {
 
-    const recoveryCodeElement =
-        document.getElementById("recoveryCode");
+
+    const storedUser =
+        loadStorage(
+            USER_STORAGE_KEY
+        );
+
+
+    const newSection =
+        document.getElementById(
+            "newRecoverySection"
+        );
+
+
+    const recoverSection =
+        document.getElementById(
+            "recoverAccountSection"
+        );
+
+
+    const recoveryCode =
+        document.getElementById(
+            "recoveryCode"
+        );
 
 
     const continueButton =
@@ -314,41 +335,163 @@ function initRecovery() {
         );
 
 
-    if (!recoveryCodeElement || !continueButton) {
-
-        return;
-
-    }
-
-
-    const user =
-        loadStorage(
-            USER_STORAGE_KEY
+    const recoverButton =
+        document.getElementById(
+            "recoverButton"
         );
 
 
-    if (!user || !user.recoveryCode) {
 
-        loadPage("username");
+    // New account flow
+
+    if (
+        storedUser &&
+        storedUser.recoveryCode
+    ) {
+
+
+        if (newSection) {
+
+            newSection.style.display =
+                "block";
+
+        }
+
+
+        if (recoverSection) {
+
+            recoverSection.style.display =
+                "none";
+
+        }
+
+
+        recoveryCode.textContent =
+            storedUser.recoveryCode;
+
+
+
+        continueButton.addEventListener(
+            "click",
+            function() {
+
+                loadPage("home");
+
+            }
+        );
+
 
         return;
 
     }
 
 
-    recoveryCodeElement.textContent =
-        user.recoveryCode;
+
+    // Existing account recovery flow
+
+    if (newSection) {
+
+        newSection.style.display =
+            "none";
+
+    }
 
 
-    continueButton.addEventListener(
+    if (recoverSection) {
+
+        recoverSection.style.display =
+            "block";
+
+    }
+
+
+
+    recoverButton.addEventListener(
         "click",
-        function() {
-
-            loadPage("home");
-
-        }
+        handleAccountRecovery
     );
+
 
 }
 
+// =================================
+// Handle Account Recovery
+// =================================
 
+async function handleAccountRecovery() {
+
+
+    const input =
+        document.getElementById(
+            "recoveryInput"
+        );
+
+
+    const error =
+        document.getElementById(
+            "recoveryError"
+        );
+
+
+    const code =
+        input.value
+        .trim()
+        .toUpperCase();
+
+
+
+    if (!code) {
+
+        error.textContent =
+            "ENTER YOUR RECOVERY CODE.";
+
+        return;
+
+    }
+
+
+
+    try {
+
+
+        const user =
+            await recoverUser(code);
+
+
+
+        if (!user) {
+
+            error.textContent =
+                "INVALID RECOVERY CODE.";
+
+            return;
+
+        }
+
+
+
+        saveStorage(
+            USER_STORAGE_KEY,
+            user
+        );
+
+
+        loadPage("home");
+
+
+    }
+
+
+    catch(error) {
+
+
+        console.error(error);
+
+
+        error.textContent =
+            "RECOVERY FAILED. Please contact us for support.";
+
+    }
+
+
+}
