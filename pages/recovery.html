@@ -4,6 +4,9 @@
 <!-- ================================= -->
 
 
+<div class="recovery-screen">
+
+
 <div class="border">
 
 ========================================
@@ -12,11 +15,17 @@
 
 
 
-<h1 id="recoveryTitle">
+<section class="recovery-title">
+
+
+<h1>
 
 RECOVERY
 
 </h1>
+
+
+</section>
 
 
 
@@ -28,24 +37,24 @@ RECOVERY
 
 
 
-<!-- ================================ -->
-<!-- New Account Recovery Code        -->
-<!-- ================================ -->
+<section class="recovery-info">
 
 
-<section id="newRecoverySection" class="recovery-section">
+<section id="newRecoverySection"
+class="recovery-code-section">
 
 
-<p>
+<h2>
 
 YOUR RECOVERY CODE
 
-</p>
-
-
-<h2 id="recoveryCode">
-
 </h2>
+
+
+<p id="recoveryCode"
+class="recovery-code">
+
+</p>
 
 
 <p>
@@ -63,45 +72,44 @@ CHANGE DEVICES.
 </p>
 
 
+<div class="recovery-actions">
+
 <button id="recoveryContinueButton">
 
 CONTINUE
 
 </button>
 
+</div>
+
 
 </section>
 
 
 
-<!-- ================================ -->
-<!-- Recover Existing Account         -->
-<!-- ================================ -->
+<section id="recoverAccountSection">
 
 
-<section id="recoverAccountSection" class="recovery-section">
-
-
-<p>
+<h2>
 
 ENTER YOUR RECOVERY CODE
 
-</p>
+</h2>
 
 
 <input
 
-    id="recoveryInput"
+id="recoveryInput"
 
-    type="text"
+type="text"
 
-    placeholder="XXX-XXX-XXX"
+placeholder="XXX-XXX-XXX"
 
-    autocomplete="off"
+autocomplete="off"
 
-    autocorrect="off"
+autocorrect="off"
 
-    spellcheck="false"
+spellcheck="false"
 
 >
 
@@ -112,11 +120,18 @@ ENTER YOUR RECOVERY CODE
 
 
 
+<div class="recovery-actions">
+
 <button id="recoverButton">
 
 RECOVER
 
 </button>
+
+</div>
+
+
+</section>
 
 
 </section>
@@ -134,5 +149,8 @@ RECOVER
 <div class="border">
 
 ========================================
+
+</div>
+
 
 </div>
