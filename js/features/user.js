@@ -20,7 +20,7 @@ function initUsername() {
         document.getElementById("continueButton");
 
     const recoverButton =
-        document.getElementbyId("recoverAccountButton");
+        document.getElementById("recoverAccountButton");
 
 
     if (!usernameInput || !continueButton) {
