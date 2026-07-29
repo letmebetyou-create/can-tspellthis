@@ -23,7 +23,7 @@ function initUsername() {
         document.getElementById("recoverAccountButton");
 
 
-    if (!usernameInput || !continueButton) {
+    if (!continueButton) {
 
         return;
 
