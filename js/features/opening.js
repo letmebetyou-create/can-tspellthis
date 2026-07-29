@@ -1,4 +1,4 @@
-```javascript
+
 // =================================
 // BET YOU CAN'T SPELL THIS
 // Opening Screen
@@ -82,4 +82,4 @@ function startApp() {
     }, 1000);
 
 }
-```
+
