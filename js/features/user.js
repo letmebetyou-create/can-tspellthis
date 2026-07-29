@@ -19,6 +19,9 @@ function initUsername() {
     const continueButton =
         document.getElementById("continueButton");
 
+    const recoverButton =
+        document.getElementbyId("recoverAccountButton");
+
 
     if (!usernameInput || !continueButton) {
 
@@ -43,10 +46,19 @@ function initUsername() {
         "input",
         function() {
 
-            clearUsernameError();
+            clearUsernameError()
 
         }
     );
+
+    if (recoverButton) {
+        recoverButton.addEventListener(
+            "click",
+            function() {
+                loadPage("recovery");
+            }
+        );
+    }
 
 }
 
