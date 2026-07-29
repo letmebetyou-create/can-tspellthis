@@ -129,7 +129,7 @@ async function loginUser(username) {
         ACTIONS.LoginUser,
 
         {
-            Username: username
+            username: username
         }
 
     );
@@ -159,7 +159,7 @@ async function recoverUser(recoveryCode) {
         ACTIONS.RecoverUser,
 
         {
-            RecoveryCode: recoveryCode
+            recoveryCode: recoveryCode
         }
 
     );
@@ -202,7 +202,7 @@ async function submitChallenge(playerAnswers) {
         ACTIONS.SubmitChallenge,
 
         {
-            Answers: playerAnswers
+            answers: playerAnswers
         }
 
     );
