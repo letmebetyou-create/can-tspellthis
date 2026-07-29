@@ -351,21 +351,3 @@ function initRecovery() {
 // Start
 // =================================
 
-if (
-    document.getElementById("username")
-) {
-
-    initUsername();
-
-}
-
-
-if (
-    document.getElementById("recoveryCode")
-) {
-
-    initRecovery();
-
-}
-```
-
