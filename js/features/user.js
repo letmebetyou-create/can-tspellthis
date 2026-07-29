@@ -6,6 +6,14 @@
 
 
 // =================================
+// Storage
+// =================================
+
+const USER_STORAGE_KEY =
+    "BET_YOU_USER";
+
+
+// =================================
 // Initialise Username Screen
 // =================================
 
@@ -54,7 +62,7 @@ function initUsername() {
 // Handle Continue
 // =================================
 
-function handleUsernameContinue(
+async function handleUsernameContinue(
     usernameInput
 ) {
 
@@ -80,10 +88,59 @@ function handleUsernameContinue(
     clearUsernameError();
 
 
-    console.log(
-        "Username is valid:",
-        username
-    );
+    setUsernameLoading(true);
+
+
+    try {
+
+        const user =
+            await createUser(username);
+
+
+        if (!user) {
+
+            showUsernameError(
+                "That username is already taken."
+            );
+
+            return;
+
+        }
+
+
+        saveStorage(
+            USER_STORAGE_KEY,
+            user
+        );
+
+
+        console.log(
+            "User created:",
+            user
+        );
+
+
+        loadPage("recovery");
+
+
+    } catch (error) {
+
+        console.error(
+            "Create user failed:",
+            error
+        );
+
+
+        showUsernameError(
+            "Something went wrong. Please try again."
+        );
+
+
+    } finally {
+
+        setUsernameLoading(false);
+
+    }
 
 }
 
@@ -194,6 +251,43 @@ function clearUsernameError() {
 
     error.textContent =
         "";
+
+}
+
+
+// =================================
+// Loading State
+// =================================
+
+function setUsernameLoading(isLoading) {
+
+    const button =
+        document.getElementById("continueButton");
+
+
+    const input =
+        document.getElementById("username");
+
+
+    if (!button || !input) {
+
+        return;
+
+    }
+
+
+    button.disabled =
+        isLoading;
+
+
+    input.disabled =
+        isLoading;
+
+
+    button.textContent =
+        isLoading
+            ? "CREATING..."
+            : "CONTINUE";
 
 }
 
