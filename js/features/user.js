@@ -328,6 +328,11 @@ function initRecovery() {
             "recoveryCode"
         );
 
+    const usernameDisplay = 
+        document.getElementById(
+            "recoveryUsernameDisplay"
+        );
+
 
     const continueButton =
         document.getElementById(
@@ -365,9 +370,15 @@ function initRecovery() {
 
         }
 
+        if (usernameDisplay) {
+            usernameDisplay.textContent =
+                storedUser.username;
+        }
 
-        recoveryCode.textContent =
-            storedUser.recoveryCode;
+        if (recoveryCode) {
+            recoveryCode.textContent = 
+                storedUser.recoveryCode;
+        }
 
 
 
