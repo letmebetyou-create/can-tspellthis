@@ -220,7 +220,7 @@ function validateUsername(username) {
 
 function showUsernameError(message) {
 
-    const error =
+    const errorMessage =
         document.getElementById("usernameError");
 
 
@@ -488,7 +488,7 @@ async function handleAccountRecovery() {
         console.error(error);
 
 
-        error.textContent =
+        errorMessage.textContent =
             "RECOVERY FAILED. Please contact us for support.";
 
     }
