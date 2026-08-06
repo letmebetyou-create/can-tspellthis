@@ -1,194 +1,130 @@
 <!-- ================================= -->
 <!-- BET YOU CAN'T SPELL THIS          -->
-<!-- Recovery                         -->
+<!-- Recovery                          -->
 <!-- ================================= -->
 
+<section class="game-screen recovery-screen">
 
-<div class="recovery-screen">
+    <div class="border">
+        ========================================
+    </div>
 
+    <!-- ================================= -->
+    <!-- Title                             -->
+    <!-- ================================= -->
 
-<div class="border">
+    <section class="recovery-title">
 
-========================================
+        <h1>
+            ACCOUNT INFO
+        </h1>
 
-</div>
+    </section>
 
+    <div class="divider">
+        ----------------------------------------
+    </div>
 
+    <!-- ================================= -->
+    <!-- New Account Flow                  -->
+    <!-- ================================= -->
 
-<section class="recovery-title">
+    <section
+        id="newRecoverySection"
+        class="recovery-code-section"
+    >
 
+        <h2>
+            YOUR RECOVERY CODE
+        </h2>
 
-<h1>
+        <p
+            id="recoveryCode"
+            class="recovery-code"
+        ></p>
 
-ACCOUNT INFO
+        <p>
+            WRITE THIS DOWN.
+        </p>
 
-</h1>
+        <p>
+            YOU WILL NEED THIS IF YOU CHANGE DEVICES.
+        </p>
 
+        <div class="recovery-actions">
+
+            <button id="recoveryContinueButton">
+                CONTINUE
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================================= -->
+    <!-- Existing Account Recovery         -->
+    <!-- ================================= -->
+
+    <section id="recoverAccountSection">
+
+        <h2>
+            RECOVER ACCOUNT
+        </h2>
+
+        <h3>
+            ENTER YOUR USERNAME
+        </h3>
+
+        <input
+            id="recoveryUsername"
+            type="text"
+            pattern="[A-Z0-9_]+"
+            style="text-transform: uppercase"
+            maxlength="20"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+            oninput="this.value = this.value.toUpperCase().replace(/[^A-Z0-9_]/g,'')"
+            inputmode="text"
+        >
+
+        <p id="usernameError"></p>
+
+        <div class="divider">
+            ----------------------------------------
+        </div>
+
+        <h3>
+            ENTER YOUR RECOVERY CODE
+        </h3>
+
+        <input
+            id="recoveryInput"
+            type="text"
+            placeholder="XXX-XXX-XXX"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+        >
+
+        <p id="recoveryError"></p>
+
+        <div class="recovery-actions">
+
+            <button id="recoverButton">
+                RECOVER
+            </button>
+
+        </div>
+
+    </section>
+
+    <div class="divider">
+        ----------------------------------------
+    </div>
+
+    <div class="border">
+        ========================================
+    </div>
 
 </section>
-
-
-
-<div class="divider">
-
-----------------------------------------
-
-</div>
-
-
-
-<section class="recovery-info">
-
-
-<section id="newRecoverySection"
-class="recovery-code-section">
-
-
-<h2>
-
-YOUR RECOVERY CODE
-
-</h2>
-
-
-<p id="recoveryCode"
-class="recovery-code">
-
-</p>
-
-
-<p>
-
-WRITE THIS DOWN.
-
-</p>
-
-
-<p>
-
-YOU WILL NEED THIS IF YOU
-CHANGE DEVICES.
-
-</p>
-
-
-<div class="recovery-actions">
-
-<button id="recoveryContinueButton">
-
-CONTINUE
-
-</button>
-
-</div>
-
-
-</section>
-
-
-
-  
-
-<section id="recoverAccountSection">
-
-<h1>
-  RECOVER ACCOUNT
-</h1>
-
-<h2>
-
-ENTER YOUR USERNAME
-
-</h2>
-
-
-<input
-
-id="recoveryUsername"
-
-type="text"
-pattern="[A-Z0-9_]+"
-style="text-transform:uppercase"
-maxlength="20"
-autocomplete="off"
-autocorrect="off"
-spellcheck="false"
-oninput="this.value = this.value.toUpperCase().replace(/[^A-Z0-9_]/g,'')"
-required
-inputmode="text"
-
->
-
-<p id="usernameError"></p>
-
-
-<div class="divider">
-
-----------------------------------------
-
-</div>
-
-<h2>
-
-ENTER YOUR RECOVERY CODE
-
-</h2>
-
-
-<input
-
-id="recoveryInput"
-
-type="text"
-
-placeholder="XXX-XXX-XXX"
-
-autocomplete="off"
-
-autocorrect="off"
-
-spellcheck="false"
-
->
-
-
-<p id="recoveryError">
-
-</p>
-
-
-
-<div class="recovery-actions">
-
-<button id="recoverButton">
-
-RECOVER
-
-</button>
-
-</div>
-
-
-</section>
-
-
-</section>
-
-
-
-<div class="divider">
-
-----------------------------------------
-
-</div>
-
-
-
-<div class="border">
-
-========================================
-
-</div>
-
-
-</div>
