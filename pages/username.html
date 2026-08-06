@@ -52,35 +52,6 @@
 
 
             <!-- =================================
-                 Username Information
-                 ================================= -->
-
-            <section class="username-info">
-
-                <p>
-                    Choose your username.
-                </p>
-
-                <p>
-                    Your username is your unique
-                    identifier in Bet You.
-                </p>
-
-                <p>
-                    It will be tied to your scores,
-                    shown on the leaderboard, and
-                    used for other community features.
-                </p>
-
-            </section>
-
-
-            <div class="divider">
-                ================================
-            </div>
-
-
-            <!-- =================================
                  Username Input
                  ================================= -->
 
@@ -91,61 +62,34 @@
                 </label>
 
                 <input
-                    id="username"
-                    name="username"
-                    type="text"
-                    maxlength="20"
-                    autocomplete="off"
-                    autocorrect="off"
-                    spellcheck="false"
-                    inputmode="text"
+                id="username"
+                name="username"
+                type="text"
+                pattern="[A-Z0-9_]+"
+                style="text-transform: uppercase"
+                maxlength="20"
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+                oninput="this.value = this.value.toUpperCase().replace(/[^A-Z0-9_]/g, '')"
+                required
+                inputmode="text"
                 >
                 <p
                     id="usernameError"
                     class="username-error"
                     aria-live="polite"
                 ></p>
-
-            </section>
-
-
-            <!-- =================================
-                 Username Rules
-                 ================================= -->
-
-            <section class="username-rules">
-
-                <h2>USERNAME RULES</h2>
-
-                <p>
-                    • Maximum 20 characters
+                
+               <p>
+                Max 20 characters; only A-Z, 0-9, and _ allowed; no spaces
                 </p>
-
-                <p>
-                    • Letters A–Z
-                </p>
-
-                <p>
-                    • Numbers 0–9
-                </p>
-
-                <p>
-                    • Underscores (_)
-                </p>
-
-                <p>
-                    • No spaces
-                </p>
-
-                <p>
-                    • Not case-sensitive
-                </p>
-
-            </section>
+                
+            </section> 
 
 
             <div class="divider">
-                ================================
+                --------------------------------
             </div>
 
 
@@ -161,22 +105,6 @@
                 >
                     CONTINUE
                 </button>
-            <div class="divider">
-            --------------------------------
-           <!-- =================================
-     Continue
-     ================================= -->
-
-<section class="username-actions">
-
-
-    <button
-        id="continueButton"
-        type="button"
-    >
-        CONTINUE
-    </button>
-
 
     <div class="divider">
         --------------------------------
