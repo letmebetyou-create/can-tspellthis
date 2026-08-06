@@ -464,7 +464,10 @@ async function handleAccountRecovery() {
 
 
         const user =
-            await recoverUser(code);
+            await recoverUser(
+                username,
+                code
+            );
 
 
 
