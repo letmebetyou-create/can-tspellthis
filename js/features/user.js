@@ -247,14 +247,14 @@ function clearUsernameError() {
         document.getElementById("usernameError");
 
 
-    if (!error) {
+    if (!errorMessage) {
 
         return;
 
     }
 
 
-    error.textContent =
+    errorMessage.textContent =
         "";
 
 }
