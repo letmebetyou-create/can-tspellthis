@@ -147,13 +147,17 @@ async function createUser(username) {
 }
 
 
-async function recoverUser(recoveryCode) {
+async function recoverUser(
+    username,
+    recoveryCode
+) {
 
     return await callAPI(
 
         ACTIONS.RecoverUser,
 
         {
+            username: username,
             recoveryCode: recoveryCode
         }
 
