@@ -224,14 +224,14 @@ function showUsernameError(message) {
         document.getElementById("usernameError");
 
 
-    if (!error) {
+    if (!errorMessage) {
 
         return;
 
     }
 
 
-    error.textContent =
+    errorMessage.textContent =
         message;
 
 }
@@ -427,7 +427,7 @@ async function handleAccountRecovery() {
         );
 
 
-    const error =
+    const errorMessage =
         document.getElementById(
             "recoveryError"
         );
@@ -442,7 +442,7 @@ async function handleAccountRecovery() {
 
     if (!code) {
 
-        error.textContent =
+        errorMessage.textContent =
             "ENTER YOUR RECOVERY CODE.";
 
         return;
@@ -461,7 +461,7 @@ async function handleAccountRecovery() {
 
         if (!user) {
 
-            error.textContent =
+            errorMessage.textContent =
                 "INVALID RECOVERY CODE.";
 
             return;
