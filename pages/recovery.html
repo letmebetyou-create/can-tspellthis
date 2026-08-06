@@ -87,8 +87,44 @@ CONTINUE
 
 
 
+  
+
 <section id="recoverAccountSection">
 
+<h2>
+
+ENTER YOUR USERNAME
+
+</h2>
+
+
+<input
+
+id="recoveryUsername"
+
+type="text"
+pattern="[A-Z0-9_]+"
+style="text-transform:uppercase"
+maxlength="20"
+autocomplete="off"
+autocorrect="off"
+spellcheck="false"
+oninput="this.value = this.value.toUpperCase().replace(/[^A-Z0-9_]/g,'')
+required
+inputmode="text"
+
+>
+
+<p>
+  id="usernameError">
+</p>
+
+
+<div class="divider">
+
+----------------------------------------
+
+</div>
 
 <h2>
 
