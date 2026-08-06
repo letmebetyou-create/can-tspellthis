@@ -361,12 +361,6 @@ body {
 
     width: 100%;
 
-    max-width: 600px;
-
-    margin: 0 auto;
-
-    text-align: center;
-
 }
 
 
@@ -607,7 +601,8 @@ body {
 }
 
 
-#recoveryInput {
+#recoveryInput,
+#recoveryUsername {
 
     display: block;
 
@@ -621,6 +616,10 @@ body {
 
     font-size: 18px;
 
+}
+
+recovery-actions {
+   margin-top: 20px;
 }
 
 
@@ -638,11 +637,6 @@ body {
 
     width: 100%;
 
-    max-width: 600px;
-
-    margin: 0 auto;
-
-    text-align: center;
 
 }
 
