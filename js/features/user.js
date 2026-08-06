@@ -247,14 +247,14 @@ function clearUsernameError() {
         document.getElementById("usernameError");
 
 
-    if (!errorMessage) {
+    if (!error) {
 
         return;
 
     }
 
 
-    errorMessage.textContent =
+    error.textContent =
         "";
 
 }
@@ -420,7 +420,10 @@ function initRecovery() {
 
 async function handleAccountRecovery() {
 
-
+    const usernameInput = 
+        document.getElementById(
+            "recoveryUsername"
+            );
     const input =
         document.getElementById(
             "recoveryInput"
@@ -432,18 +435,24 @@ async function handleAccountRecovery() {
             "recoveryError"
         );
 
-
+    const username = 
+        usernameInput.value
+            .trim();
     const code =
         input.value
         .trim()
         .toUpperCase();
 
-
+    if (!username) {
+        errorMessage.textContent = 
+            "PLEASE INPUT USERNAME.";
+        return;
+    }
 
     if (!code) {
 
         errorMessage.textContent =
-            "ENTER YOUR RECOVERY CODE.";
+            "PLEASE INPUT RECOVERY CODE.";
 
         return;
 
